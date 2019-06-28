@@ -1,0 +1,23 @@
+인텔 39
+dsp 8
+arm 4
+
+
+struct tast_struct  *task   나 자신
+
+
+
+
+
+cpu_conext_save  여기에 저장
+sighand_struct 함수포인터는 여기 저장
+
+k_sigaction에 등록
+
+
+spin lock      
+어톰믹한 연산을 할 때 = 1clock내에 끝낼 수 있는 연산을 할 때 spin lock을 쓴다
+
+두번쨰 인자  커널이 실행
+
+demand on paging

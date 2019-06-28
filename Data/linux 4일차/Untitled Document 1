@@ -1,0 +1,17 @@
+uid
+gid
+권한이랑 그룹정보
+
+-.d   권한  그룹
+b block device 일정한 사이즈로 동작
+c 스트림이 있냐 없냐
+
+block device는 권한은 root(최고 권한)  그룹은 disk
+
+./a.out /dev/sdb    <-
+
+passwd : 유저 아이디
+group : 그룹정보를 얻기 위한 구조체
+stat : 파일에 대한 정보를 획득하기 위해
+
+

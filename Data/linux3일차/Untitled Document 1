@@ -1,0 +1,27 @@
+man -s3 opendir
+
+DIR은 디렉토리에 대한 포인터
+
+inode number 디스크 내부의 링크 정보
+
+d_name[NAME_MAX+1]  filename ->디렉토리 안에 있는 내용의 이름
+
+opendir(".") => . 자기자신
+d_name[0] = '.' 숨긴파일
+
+getopt 시스템콜
+
+
+
+
+
+vi -t task_struct 
+/files_struct
+file
+file_operations
+152 157 11
+
+
+인터널 프레그먼트
+
+

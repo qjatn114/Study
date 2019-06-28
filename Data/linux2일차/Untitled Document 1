@@ -1,0 +1,125 @@
+
+#include <stdio.h>
+#include <sys/types.h>
+#include <fcntl.h>
+#include <unistd.h>
+
+int main(void)
+{
+	int fd;
+	off_t new_pos;
+
+	fd = open("reading.txt",O_RDONLY);
+
+	new_pos = lseek(fd,(off_t)0,SEEK_END);
+
+	printf("new_pos =  %ld\n",new_pos);
+		
+
+	return 0;	
+}
+
+open file6.c 읽을게 없어 -1뜸
+file_operations
+
+
+f_pos 파일의 위치 현재 파일 포인터를 반환 반환값임
+
+파일 내용을 읽어서 33을 반환함
+
+------------------------------
+#include <stdio.h>
+#include <sys/types.h>
+#include <fcntl.h>
+#include <unistd.h>
+
+int main(void)
+{
+	int fd;
+	off_t new_pos;
+	char buf[32] = "test test test";
+
+	fd = open("reading.txt",O_RDWR);
+
+	new_pos = lseek(fd,(off_t)0,SEEK_END);		//0부터 SEEK_END까지 바뀜
+
+	printf("new_pos =  %ld\n",new_pos);
+		
+	write(fd,buf,sizeof(buf));
+
+	return 0;	
+}
+
+SEEK_END가 있기 때문에 끝을 읽음. 33을 읽고 33부터 쓰기
+그래서 reading.txt 뒤에 test test test가 쓰여짐
+
+fd 배열의 인덱스 번호
+
+man -s2 lseek
+whence 기준으로 offset
+
+lseek를 이용하여 현재 파일의 용량을 계산할 수 있다
+
+
+
+
+
+#include <stdio.h>
+#include <sys/types.h>
+#include <fcntl.h>
+#include <unistd.h>
+
+int main(void)
+{
+	int fd;
+	off_t new_pos;
+	char wbuf[32] = "test test test";
+	char rbuf[32] = "";
+
+	fd = open("reading.txt",O_RDWR);
+
+	new_pos = lseek(fd,(off_t)10,SEEK_SET);
+
+	printf("new_pos =  %ld\n",new_pos);
+		
+	read(fd,rbuf,sizeof(rbuf));
+
+	printf("rbuf=%s\n",rbuf);
+
+	close(fd);
+
+	return 0;	
+}
+
+
+
+
+
+
+-----------------------------------------------arg-------------------------
+ls
+ls -al
+cp src dest
+mv src dest
+
+ls ,cp , mv 가 main이라는 것 main 여러개
+-al src dest 
+
+4Kbyte 물리메모리의 기본 단위
+
+
+-------------------------------
+0644권한 파일 생성할 때 이걸쓴다.
+
+O_TRUNC 는 새로쓰기
+
+parsing
+파싱 
+
+gdb
+b: break point
+c: continue
+
+b 30 if loop_cnt==4 	loop_cnt가 4면 30번줄에 멈추겠따.
+
+

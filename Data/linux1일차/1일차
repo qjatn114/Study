@@ -1,0 +1,194 @@
+wget https://mirrors.edge.kernel.org/pub/linux/kernel/v4.x/linux-4.9.1.tar.gz -> 커널다운로드
+tar zxvf linux-4.9.1.tar.gz  ->압축풀기
+
+
+
+
+
+sudo apt-get install ctags
+sudo apt-get install cscope
+-------------------------------
+vi ~/.vimrc
+set nu
+
+set ts=4
+
+set tags=/home/koitt/proj/education/lec/linux-4.9.1/tags
+
+"set tags=/home/sdr/glibc/glibc-2.21/tags
+
+if version >= 500
+
+func! Sts( )
+
+    let st = expand("<cword>")
+
+    exe "sts ".st
+
+endfunc
+
+nmap ,st :call Sts( )<cr>
+
+func! Tj( )
+
+    let st = expand("<cword>")
+
+    exe "tj ".st
+
+endfunc
+
+nmap ,tj :call Tj( )<cr>
+
+endif
+
+set csprg=/usr/bin/cscope
+
+set nocsverb
+
+cs add /home/koitt/proj/education/lec/linux-4.9.1/cscope.out
+
+"cs add /home/sdr/glibc/glibc-2.21/cscope.out
+
+set csto=0
+
+set cst
+
+func! Css( )
+
+    let css = expand("<cword>")
+
+    new
+
+    exe "cs find s ".css
+
+    if getline(1) == ""
+
+        exe "q!"
+
+    endif
+
+endfunc
+
+nmap ,css :call Css( )<cr>
+
+func! Csc( )
+
+    let csc = expand("<cword>")
+
+    new
+
+    exe "cs find c ".csc
+
+    if getline(1) == ""
+
+        exe "q!"
+
+    endif
+
+endfunc
+
+nmap ,csc :call Csc( )<cr>
+
+func! Csd( )
+
+    let csd = expand("<cword>")
+
+    new
+
+    exe "cs find d ".csd
+
+    if getline(1) == ""
+
+        exe "q!"
+
+    endif
+
+endfunc
+
+nmap ,csd: call Csd( )<cr>
+
+func! Csg( )
+
+    let csg = expand("<cword>")
+
+    new
+
+    exe "cs find g ".csg
+
+    if getline(1) == ""
+
+        exe "q!"
+
+    endif
+
+endfunc
+
+nmap, csg :call Csg( )<cr>
+------------------------------------------------------
+vi ~/mkcscope.sh
+#!/bin/sh
+
+rm -rf cscope.files cscope.out
+
+find . \( -name '*.c' -o -name '*.cpp' -o -name '*.cc' -o -name '*.h' -o -name '*.S' \) -print > cscope.files
+
+cscope -i cscope.files
+--------------------------------------------
+chmod 755 ~/mkcscope.sh
+파일을 실행파일로 권한을 주는 명령어
+과연 755와 0664가 뭘 까
+=---------------------
+sudo cp ~/mkcscope.sh /usr/local/bin/
+ctags -R; mkcscope.sh
+ctrl+D
+
+vi -t task_struct
+
+ 152   1475  include/linux/sched.h <<task_struct>>
+             struct task_struct {
+
+
+152 enter
+
+:/files_struct
+---------------------------
+ps -ef   프로세스 보는명령
+
+int main()
+{
+for(;;)
+;
+}
+./a.out &  백그라운드로 실행?
+
+메모리에 로드돼서 실행되느냐 안되느냐  <<프로세스
+
+프로세스는 메모리에 다 올라가있는것
+
+프로세스마다 task가 실행되고 그것을 표현하는게 task_struct
+task_struct안에 files_struct가 있음
+
+
+
+--rcu <<커널에만 있는 캐시  커널 내부 캐시
+
+
+system call은 사용자영역과 커널이 분리
+
+system call == interrupt  소프트웨어 인터럽트
+
+task는 스케쥴러와 관련있다
+
+ /* filesystem information */
+     struct fs_struct *fs;
+ /* open file information */
+     struct files_struct *files;
+이 두개가 가상파일시스템을 관리
+
+정의보기
+ctrl+]
+1번
+
+ctrl+t 는 나가기
+
+

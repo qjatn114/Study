@@ -1,0 +1,13 @@
+같은 메모리 레이아웃에 있는 것들을
+
+세마포어 IPC통신  동기화
+프로세서는 정보를 공유할 수 없음
+가장 느린 IPC통신 = 네트워크
+TCP = sock_stream
+
+
+sinn addr 여기가 ip를 세팅하는 부분
+
+TCP   sock_stream
+UDP	sock_dgram
+nsproc

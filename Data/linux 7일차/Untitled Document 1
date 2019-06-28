@@ -1,0 +1,12 @@
+envp 환경변수 설정 옵션을 줄 수 있음
+
+execve는 인자랑 환경변수 적어줘야됨
+
+프로토콜을 해킹하거나 대외적으로 공개할 수 없을 떄 so파일을 사용한다
+
+
+setjmp가 goto rable
+
+
+gcc -L/$(pwd) -Wl,-rpath=$(pwd) -Wall recv_test.c -lserial -g
+
