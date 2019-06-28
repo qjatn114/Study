@@ -1,0 +1,33 @@
+미분을 하는 의미 : 변화량을 찾겠다. 
+
+kernel.at<float>  : 미분필터
+
+변화하는 픽셀을 찾겠다
+변화하는 픽셀이 있으면 주변값이 세팅이 된다
+변하는 대상 자체는 0
+
+
+jmp_buf는 상태를 저장하는 버퍼 구조체
+setjmp는 현재 상태를 저장하고 longjmp이전 상태로 이동하는 역할.
+setjmp시점에 스택의 정보를 임의의 장소에 저장해 놓고 (setjmp(a) a에 저장 ) longjmp에서 해당 스택 정보를 복구해서 setjmp다음 라인으로 바로 이동.
+longjmp는 저장된 상태를 다시 복구한다. longjmp = goto
+sestjmp는 처음에 0을 설정한다.기본적으로 한 번은 들어가야 하므로 0을 설정
+
+setjmp
+-jmp_buf구조를 만들어냄
+-실행을 시작할 위치를 지정
+-최초호출 시 (즉,longjmp를 톨한 이동 위치를 설정하는 경우)0을 반환
+하지만 longjmp를 통해 반환되는 경우 longjmp의 두번째 인자로 주어진 값을 반환
+int setjmp(jmp_buf state)
+:보통 0을 반환 만약 longjmp가 이 state로 비-지역 분기를 수행하기 위해 나중에 사용된다면 setjmp는 0이 아닌값을 반
+
+longjmp
+-호출되면 jmp_buf에 저장된 레지스터가 반환
+-두번째 인자는 반드시 0이외의 값으로 설정
+-강제로 0을 쓰는 경우 시스템이 자동으로 1로 바꿈
+-void longjmp(jmp_buf state, int value)
+:state에 저장된 상황으로 현재 실행을 되돌리고 반환지점을 만들었던 setjmp를 호출한 지점부터 실행을 계속
+:longjmp에 의한 setjmp로부터의 반환은 longjmp에 주어졌던 0이 아닌 인수값을 반환
+
+jmp_buf
+배열로 정의. 실제 아키텍처 별 정보를 담는 부분
