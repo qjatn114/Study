@@ -1,0 +1,25 @@
+TX : FPGA -> MCP -> DSP
+	문제점 : FPGA에서 송신 중 DSP에서 송신하면?
+	해결 : MCP에서 Receive를 못 받게 하면 된다. (근데 기능없는듯)
+
+RX : DSP -> MCP -> FPGA
+	문제점 : DSP에서 송신 중 FPGA에서 송신하면?
+	해결 : MCP에서 TXREQ=0하거나 ATBT 설정하거나 Listen-Only Mode하거나
+
+
+RX : 버퍼길이 오류
+RX buffer명령으로 13byte로 받으면 문제없음
+16byte 받으면 이상하게 받음
+
+read명령으로 1byte씩 13번 받기로함
+
+
+
+Bad File Descriptor 오류
+이유모름
+1)버퍼길이
+2)RX받고나서 약간의 딜레이를 주고나서 TX하면 오류 없음?
+
+
+구조체 문제
+RX TX myCanMsg

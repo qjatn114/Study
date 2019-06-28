@@ -1,0 +1,20 @@
+DSP->FPGA
+<Extended>
+ID = 0x2
+DATA = F0000000 (F:0x46)
+
+FPGA->DSP
+<Extended>
+ID = 0x2
+DATA =  D0 : Lidar <1:0>
+	D1 : Lidar
+	D2 :
+	D3 :
+	D4 :
+	D5 :
+	D6 : Encoder <1:0>
+	D7 : Encoder
+
+
+1) 10ms마다 DSP->FPGA 신호를 보낸다.
+2) FPGA에서 받은 신호가 'F'이면 Encoder값과 Lidar값을 DSP한테 보낸다.

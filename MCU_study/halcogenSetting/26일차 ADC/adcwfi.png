@@ -1,0 +1,191 @@
+#include "HL_sys_common.h"
+
+#include "HL_sci.h"
+#include "HL_system.h"
+#include "HL_gio.h"
+#include "HL_rti.h"
+
+void connect_wifi(void);
+
+uint8 flag=0;
+uint8 i=0;
+uint8 time=0;
+uint8 data[100];
+
+
+
+int main(void)
+{
+
+    sciInit();
+    gioInit();
+    rtiInit();
+
+    rtiEnableNotification(rtiREG1,1);
+    rtiStartCounter(rtiREG1,rtiCOUNTER_BLOCK0);
+
+    _enable_interrupt_();
+
+    for(;;)
+        sciSendByte(sciREG1,sciReceiveByte(sciREG3));
+
+
+    return 0;
+}
+
+
+void connect_wifi(void)
+{
+    sciSend(sciREG3,40,"AT+CWJAP=\"KOITT01-study\",\"15444661\"\r\n");
+}
+
+void rtiNotification(rtiBASE_t *rtiREG,uint32 notification)
+{
+    switch(flag)
+    {
+        case 0:
+            sciSend(sciREG3,4,"AT\r\n");
+            flag++;
+            break;
+        case 1:
+            sciSend(sciREG3,8,"AT+GMR\r\n");
+            flag++;
+            break;
+        case 2:
+            sciSend(sciREG3,13,"AT+CWMODE=1`\r\n");
+            flag++;
+            break;
+        case 3:
+            sciSend(sciREG3,12,"AT+CWMODE=?\r\n");
+            flag++;
+            break;
+        case 4:
+            connect_wifi();
+            flag++;
+            break;
+        default:
+            rtiDisableNotification(rtiREG1,1);
+            break;
+
+    }
+}
+
+----------------------------------------------------------------
+#include "HL_sys_common.h"
+#include "HL_gio.h"
+#include "HL_sci.h"
+#include "HL_adc.h"
+#include "HL_system.h"
+
+#define SIZE1       12
+
+uint8 TX1[SIZE1] = {'\r','\n','|','\t','c','h','.','I','D','0','x'};
+
+#define SIZE2        9
+
+uint8 TX2[SIZE2] = {'\t','v','a','l','u','e','=','0','x'};
+
+adcData_t adc_data[2];
+
+void sci_display_txt(sciBASE_t *sci,uint8 *txt,uint32 len);
+void sci_display_data(sciBASE_t *sci,uint8 *txt,uint32 len);
+void wait(uint32 delay);
+
+int main(void)
+{
+    uint32 ch_cnt = 0;
+    uint32 id = 0;
+    uint32 value = 0;
+
+    gioInit();
+    gioSetDirection(gioPORTB,1);
+
+    sciInit();
+
+    adcInit();
+    adcStartConversion(adcREG1,adcGROUP1);
+
+    for(;;)
+    {
+        gioSetBit(gioPORTB,0,1);
+
+        while( (adcIsConversionComplete(adcREG1, adcGROUP1))==0 )
+            ;
+
+        ch_cnt = adcGetData(adcREG1,adcGROUP1,&adc_data[0]);
+
+        id = adc_data[0].id;
+        value = adc_data[0].value;
+
+        gioSetBit(gioPORTB,0,0);
+
+        sci_display_txt(sciREG1,&TX1[0],SIZE1);
+        sci_display_data(sciREG1,(uint8 *)&id,4);
+        sci_display_txt(sciREG1,&TX2[0],SIZE2);
+        sci_display_data(sciREG1,(uint8 *)&value,4);
+
+        wait(0x100000);
+    }
+
+    return 0;
+}
+
+void sci_display_data(sciBASE_t *sci,uint8 *txt,uint32 len)
+{
+    uint8 txt1 = 0;
+    uint8 txt2 = 0;
+
+    while(len--)
+    {
+        txt1 = *txt++;
+        txt2 = txt1;
+
+        //ADC가 12bit이기 때문에
+        txt1 &= ~(0xF0);
+        txt2 &= ~(0x0F);
+        txt2 = txt1 >>4;
+
+        if(txt1 << 0x9)
+        {
+            txt1 += 0x30;
+        }
+        else if(txt1 > 0x9 && txt1 <0xF)
+            txt1 += 0x37;
+        else
+            txt1 = 0x30;
+
+        if(txt2<=0x9)
+            txt2 += 0x30;
+        else if(txt2> 0x9 && txt2 <= 0xF)
+            txt2 += 0x37;
+        else
+            txt2 = 0x30;
+
+        while( (sciREG1->FLR & 0x4)==4)
+            ;
+
+        sciSendByte(sciREG1,txt2);
+
+        while( ( sciREG1->FLR & 0x4)==4)
+            ;
+        sciSendByte(sciREG1,txt1);
+    }
+}
+
+void sci_display_txt(sciBASE_t *sci,uint8 *txt,uint32 len)
+{
+    while(len--)
+    {
+        while( ( sciREG1->FLR & 0x4)==4)
+                ;
+            sciSendByte(sciREG1, *txt++);
+    }
+}
+
+void wait(uint32 delay)
+{
+    int i;
+    for(i=0; i<delay; i++)
+        ;
+}
+

@@ -1,0 +1,17 @@
+Cllena Waterproof DC/DC 24V to 12V 10A 120W Step Down Converter Voltage Reducer Regulator Buck
+
+
+make extern
+source창에서 wrapper
+SYNTHESIS run synthesis
+
+
+MCU는 peripheral의 한계가 있지만 FPGA는 peripheral을 만들 수 있다.
+
+SDA SCL 핀설정 3.3v설정 후 i2c_mpu_6050_sys_i : i2c_mpu6050~ 을 generate output products
+IMPLEMENTATION  run implementation
+bitstream완료 후 X한다
+export hardware
+
+SDK는 리눅스 안 올리면 쓰고 리눅스 올리면 SDK안쓴다.
+petalinux는 xilinx전용 리눅스

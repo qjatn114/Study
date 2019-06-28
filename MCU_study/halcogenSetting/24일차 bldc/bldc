@@ -1,0 +1,130 @@
+
+#include "HL_sys_common.h"
+#include "HL_system.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include "HL_sci.h"
+#include "HL_gio.h"
+#include "HL_etpwm.h"
+#include "HL_ecap.h"
+#define UART sciREG1
+
+char buf[128];
+unsigned int buf_len;
+
+int throttle,aileron,elevator,throttle,rudder;
+int led_on;
+
+
+
+void sci_display(sciBASE_t *sci,uint8 *text,uint32 len);
+void wait(uint32 time);
+void ecapNotification(ecapBASE_t *ecap,uint16 flag);
+
+int main(void)
+{
+    sciInit();
+
+    sprintf(buf,"SCI Init Success!\n\r\0");
+    buf_len = strlen(buf);
+    sci_display(UART,(uint8 *)buf,buf_len);
+
+    gioInit();
+
+    sprintf(buf,"GIO Init Success!!\n\r\0");
+    buf_len = strlen(buf);
+    sci_display(UART,(uint8 *)buf,buf_len);
+
+    etpwmStartTBCLK();
+    
+    wait(10000);
+    
+    etpwmREG1->CMPA = 1000;
+    
+    wait(1000000);
+    
+    etpwmREG1->CMPB = 2000;
+    
+    wait(1000000);
+    ecapInit();
+
+    sprintf(buf,"ECAP Init Success!!\n\r\0");
+    buf_len = strlen(buf);
+    sci_display(UART,(uint8 *)buf,buf_len);
+    _enable_interrupt_();
+
+    ecapStartCounter(ecapREG1);
+    ecapStartCounter(ecapREG2);
+    ecapStartCounter(ecapREG3);
+    ecapStartCounter(ecapREG4);
+
+    ecapEnableCapture(ecapREG1);
+    ecapEnableCapture(ecapREG2);
+    ecapEnableCapture(ecapREG3);
+    ecapEnableCapture(ecapREG4);
+
+    for(;;)
+        ;
+
+
+
+    return 0;
+}
+
+void ecapNotification(ecapBASE_t *ecap,uint16 flag)
+{
+    uint32 cap[8];
+
+    cap[0] = ecapGetCAP1(ecapREG1);
+    cap[1] = ecapGetCAP2(ecapREG1);
+    cap[2] = ecapGetCAP1(ecapREG2);
+    cap[3] = ecapGetCAP2(ecapREG2);
+    cap[4] = ecapGetCAP1(ecapREG3);
+    cap[5] = ecapGetCAP2(ecapREG3);
+    cap[6] = ecapGetCAP1(ecapREG4);
+    cap[7] = ecapGetCAP2(ecapREG4);
+
+    //channel 1
+    aileron = (cap[3] - cap[2]) * 1000/ VCLK3_FREQ / 1000;
+    //channel 2
+    elevator = (cap[1] - cap[0]) * 1000/ VCLK3_FREQ / 1000;
+    //channel 3
+    throttle = (cap[5] - cap[4]) * 1000/ VCLK3_FREQ / 1000;
+    //channel 1
+    rudder =   (cap[7] - cap[6]) * 1000/ VCLK3_FREQ / 1000;
+
+    sprintf(buf,"ch1 = %d ms \tch2 = %d ms \tch3 = %d ms \tch4 = %d ms\n\r\0",aileron,elevator,throttle,rudder);
+
+
+    buf_len = strlen(buf);
+    sci_display(UART,(uint8 *)buf,buf_len);
+    
+    if(throttle > 1700)
+    {
+        gioSetBit(gioPORTA,4,1);
+    }
+    else
+        gioSetBit(gioPORTA,4,1);
+    
+    wait(10000);
+
+}
+
+void sci_display(sciBASE_t *sci,uint8 *text,uint32 len)
+{
+    while(len--)
+    {
+        while((UART->FLR & 0x4)== 4)
+            ;
+        sciSendByte(UART, *text++);
+    }
+}
+
+void wait(uint32 time)
+{
+    int i;
+
+    for(i=0;i<time;i++)
+        ;
+}
