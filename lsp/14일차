@@ -1,0 +1,66 @@
+dest_cpu를 구하는 이유
+스케줄링해서 실행 한다는 것은 CPU의 런큐에 올라가는것
+런큐에 올릴려면 1번 CPU에 올라갈 건지 2번 CPU에 올라갈건지 몇 번 CPU에 올라갈 건지 알아야 한다. 그걸 구함
+현재 processor id값을 구해서 dest_cpu와 같으면 unlock
+아니면 밑에 cpu active를 시킨다
+
+
+cpu를 멈춰놓고 이주시킨다
+지금 돌던 녀석을 멈춰놓고 exec해서 만든애를 올린다.
+
+디바이스 드라이버면 evfd를 붙여야한다 디바이스 드라이버는 디바이스를 구동시키는 실행파일이다
+얘가 만들어지면서 장치파일이 붙는다. 
+
+bprm_mm_init  메모리 세팅
+
+retval = bprm_mm_init(bprm)  ctrl +]
+mm_alloc()  ctrl + ]
+mm_init()   ctrl + ] 3번
+mm_alloc_pgd(mm)   ctrl +] 1번  page directory setting
+pgd_alloc(mm)  ctrl + ]  35번
+pgd_alloc()  ctrl + ]
+__get_free_page()  얘가 buddy할당자. => 4K메모리 단위로 관리하는게 buddy이다  buddy에서 메모리를 떼어 온다.\
+
+preallocate_pmds()  //pmd도 메모리 세팅  ctrl + ]
+pmd= (pmd_t *)__get_free_page()  //pmd에도 메모리 할당 받음 get_free_page는 무조건 buddy
+
+
+가상 메모리와 물리메모리를 연결하기 위한 메모리 공간을 할당만 받음
+
+메모리할당은 대부분 slab이랑 buddy가 나온다
+buddy : 4K단위로
+slab  : 4K 안에 있는 메모리를 쪼개서 관리하는 녀석
+그러니 buddy가 대빵
+
+init_new_context :pgd세팅을 했으니 페이징 준비가 됐다. memory context
+
+init_new_context_ldt   ctrl + ] 2번
+
+alloc_ldt_struct   //segment description table 세팅
+
+
+buddy는 페이지를 할당받을 때 큼직큼직 대규모 데이터
+slab  짜잘한 데이터 할당
+
+
+vfs_read()
+가상파일시스템을 써야하는 이유
+리눅스는 파일시스템이 수천개
+이것들을 다 커버하려면 파일시스템도 함수포인터 베이스로 동작해야한다.
+함수포인터 다발을 물고있는게 가상파일 시스템
+
+
+
+
+----------------------------------------
+grep -rn "bm_entry_read" ./
+vi fs/binfmt_misc.c	(bm_entry_read)
+
+simple_read_from_buffer  ctrl + ]
+copy_to_user ctrl + 30
+copy_to_user 함수는 매우 중요하다 디바이스 드라이버를 만들 때 밥 먹듯이 쓰인다
+copy_to_user  ctrl + ]
+__copy_to_user  ctrl + ] 35번
+
+파일을 물리메모리에 올리고 페이지에들어있는 내용을 읽어서 버퍼에 집어넣고 이 버퍼에서 얘가 elf헤더이니깐 여기에 있는 entry point를 찾아서 배치하고 그리고 동적라이브러리
+
