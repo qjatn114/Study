@@ -1,0 +1,1202 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+ABORT_TX	CAN_Rx/mcp_can_dfs.h	201;"	d
+ABORT_TX	CAN_Tx/mcp_can_dfs.h	201;"	d
+ADCMAX	CAN_Rx/hardware.h	103;"	d
+ADCMAX	CAN_Tx/hardware.h	103;"	d
+AN0cfg	CAN_Rx/led7.h	63;"	d
+AN0cfg	CAN_Tx/led7.h	63;"	d
+AN1cfg	CAN_Rx/led7.h	64;"	d
+AN1cfg	CAN_Tx/led7.h	64;"	d
+AN2cfg	CAN_Rx/led7.h	65;"	d
+AN2cfg	CAN_Tx/led7.h	65;"	d
+AN3cfg	CAN_Rx/led7.h	66;"	d
+AN3cfg	CAN_Tx/led7.h	66;"	d
+BTLMODE	CAN_Rx/mcp_can_dfs.h	223;"	d
+BTLMODE	CAN_Tx/mcp_can_dfs.h	223;"	d
+CANAUTOOFF	CAN_Rx/mcp_can_dfs.h	429;"	d
+CANAUTOOFF	CAN_Tx/mcp_can_dfs.h	429;"	d
+CANAUTOON	CAN_Rx/mcp_can_dfs.h	428;"	d
+CANAUTOON	CAN_Tx/mcp_can_dfs.h	428;"	d
+CANAUTOPROCESS	CAN_Rx/mcp_can_dfs.h	427;"	d
+CANAUTOPROCESS	CAN_Tx/mcp_can_dfs.h	427;"	d
+CANDEBUG	CAN_Rx/mcp_can_dfs.h	418;"	d
+CANDEBUG	CAN_Tx/mcp_can_dfs.h	418;"	d
+CANDEFAULTIDENT	CAN_Rx/mcp_can_dfs.h	434;"	d
+CANDEFAULTIDENT	CAN_Tx/mcp_can_dfs.h	434;"	d
+CANDEFAULTIDENTEXT	CAN_Rx/mcp_can_dfs.h	435;"	d
+CANDEFAULTIDENTEXT	CAN_Tx/mcp_can_dfs.h	435;"	d
+CANSENDTIMEOUT	CAN_Rx/mcp_can_dfs.h	422;"	d
+CANSENDTIMEOUT	CAN_Tx/mcp_can_dfs.h	422;"	d
+CANUSELOOP	CAN_Rx/mcp_can_dfs.h	420;"	d
+CANUSELOOP	CAN_Tx/mcp_can_dfs.h	420;"	d
+CAN_1000KBPS	CAN_Rx/mcp_can_dfs.h	460;"	d
+CAN_1000KBPS	CAN_Tx/mcp_can_dfs.h	460;"	d
+CAN_100KBPS	CAN_Rx/mcp_can_dfs.h	455;"	d
+CAN_100KBPS	CAN_Tx/mcp_can_dfs.h	455;"	d
+CAN_100KBPS	ps-spi-app.c	86;"	d	file:
+CAN_10KBPS	CAN_Rx/mcp_can_dfs.h	448;"	d
+CAN_10KBPS	CAN_Tx/mcp_can_dfs.h	448;"	d
+CAN_125KBPS	CAN_Rx/mcp_can_dfs.h	456;"	d
+CAN_125KBPS	CAN_Tx/mcp_can_dfs.h	456;"	d
+CAN_200KBPS	CAN_Rx/mcp_can_dfs.h	457;"	d
+CAN_200KBPS	CAN_Tx/mcp_can_dfs.h	457;"	d
+CAN_200KBPS	ps-spi-app.c	87;"	d	file:
+CAN_20KBPS	CAN_Rx/mcp_can_dfs.h	449;"	d
+CAN_20KBPS	CAN_Tx/mcp_can_dfs.h	449;"	d
+CAN_250KBPS	CAN_Rx/mcp_can_dfs.h	458;"	d
+CAN_250KBPS	CAN_Tx/mcp_can_dfs.h	458;"	d
+CAN_250KBPS	ps-spi-app.c	88;"	d	file:
+CAN_31K25BPS	CAN_Rx/mcp_can_dfs.h	450;"	d
+CAN_31K25BPS	CAN_Tx/mcp_can_dfs.h	450;"	d
+CAN_33K3BPS	CAN_Rx/mcp_can_dfs.h	451;"	d
+CAN_33K3BPS	CAN_Tx/mcp_can_dfs.h	451;"	d
+CAN_40KBPS	CAN_Rx/mcp_can_dfs.h	452;"	d
+CAN_40KBPS	CAN_Tx/mcp_can_dfs.h	452;"	d
+CAN_40KBPS	ps-spi-app.c	84;"	d	file:
+CAN_4K096BPS	CAN_Rx/mcp_can_dfs.h	446;"	d
+CAN_4K096BPS	CAN_Tx/mcp_can_dfs.h	446;"	d
+CAN_500KBPS	CAN_Rx/mcp_can_dfs.h	459;"	d
+CAN_500KBPS	CAN_Tx/mcp_can_dfs.h	459;"	d
+CAN_500KBPS	ps-spi-app.c	89;"	d	file:
+CAN_50KBPS	CAN_Rx/mcp_can_dfs.h	453;"	d
+CAN_50KBPS	CAN_Tx/mcp_can_dfs.h	453;"	d
+CAN_5KBPS	CAN_Rx/mcp_can_dfs.h	447;"	d
+CAN_5KBPS	CAN_Tx/mcp_can_dfs.h	447;"	d
+CAN_80KBPS	CAN_Rx/mcp_can_dfs.h	454;"	d
+CAN_80KBPS	CAN_Tx/mcp_can_dfs.h	454;"	d
+CAN_80KBPS	ps-spi-app.c	85;"	d	file:
+CAN_CTRLERROR	CAN_Rx/mcp_can_dfs.h	467;"	d
+CAN_CTRLERROR	CAN_Tx/mcp_can_dfs.h	467;"	d
+CAN_EXTID	CAN_Rx/mcp_can_dfs.h	432;"	d
+CAN_EXTID	CAN_Tx/mcp_can_dfs.h	432;"	d
+CAN_FAIL	CAN_Rx/mcp_can_dfs.h	470;"	d
+CAN_FAIL	CAN_Tx/mcp_can_dfs.h	470;"	d
+CAN_FAIL	ps-spi-app.c	59;"	d	file:
+CAN_FAILINIT	CAN_Rx/mcp_can_dfs.h	463;"	d
+CAN_FAILINIT	CAN_Tx/mcp_can_dfs.h	463;"	d
+CAN_FAILTX	CAN_Rx/mcp_can_dfs.h	464;"	d
+CAN_FAILTX	CAN_Tx/mcp_can_dfs.h	464;"	d
+CAN_GETTXBFTIMEOUT	CAN_Rx/mcp_can_dfs.h	468;"	d
+CAN_GETTXBFTIMEOUT	CAN_Tx/mcp_can_dfs.h	468;"	d
+CAN_GETTXBFTIMEOUT	ps-spi-app.c	61;"	d	file:
+CAN_MAX_CHAR_IN_MESSAGE	CAN_Rx/mcp_can_dfs.h	472;"	d
+CAN_MAX_CHAR_IN_MESSAGE	CAN_Tx/mcp_can_dfs.h	472;"	d
+CAN_MSGAVAIL	CAN_Rx/mcp_can_dfs.h	465;"	d
+CAN_MSGAVAIL	CAN_Tx/mcp_can_dfs.h	465;"	d
+CAN_NOMSG	CAN_Rx/mcp_can_dfs.h	466;"	d
+CAN_NOMSG	CAN_Tx/mcp_can_dfs.h	466;"	d
+CAN_OK	CAN_Rx/mcp_can_dfs.h	462;"	d
+CAN_OK	CAN_Tx/mcp_can_dfs.h	462;"	d
+CAN_OK	ps-spi-app.c	60;"	d	file:
+CAN_SENDMSGTIMEOUT	CAN_Rx/mcp_can_dfs.h	469;"	d
+CAN_SENDMSGTIMEOUT	CAN_Tx/mcp_can_dfs.h	469;"	d
+CAN_SENDMSGTIMEOUT	ps-spi-app.c	62;"	d	file:
+CAN_STDID	CAN_Rx/mcp_can_dfs.h	431;"	d
+CAN_STDID	CAN_Tx/mcp_can_dfs.h	431;"	d
+CAcfg	CAN_Rx/led7.h	53;"	d
+CAcfg	CAN_Tx/led7.h	53;"	d
+CBcfg	CAN_Rx/led7.h	54;"	d
+CBcfg	CAN_Tx/led7.h	54;"	d
+CCcfg	CAN_Rx/led7.h	55;"	d
+CCcfg	CAN_Tx/led7.h	55;"	d
+CDcfg	CAN_Rx/led7.h	56;"	d
+CDcfg	CAN_Tx/led7.h	56;"	d
+CEcfg	CAN_Rx/led7.h	57;"	d
+CEcfg	CAN_Tx/led7.h	57;"	d
+CFcfg	CAN_Rx/led7.h	58;"	d
+CFcfg	CAN_Tx/led7.h	58;"	d
+CGcfg	CAN_Rx/led7.h	59;"	d
+CGcfg	CAN_Tx/led7.h	59;"	d
+CLKOUT_DISABLE	CAN_Rx/mcp_can_dfs.h	204;"	d
+CLKOUT_DISABLE	CAN_Tx/mcp_can_dfs.h	204;"	d
+CLKOUT_ENABLE	CAN_Rx/mcp_can_dfs.h	203;"	d
+CLKOUT_ENABLE	CAN_Tx/mcp_can_dfs.h	203;"	d
+CLKOUT_PS1	CAN_Rx/mcp_can_dfs.h	205;"	d
+CLKOUT_PS1	CAN_Tx/mcp_can_dfs.h	205;"	d
+CLKOUT_PS2	CAN_Rx/mcp_can_dfs.h	206;"	d
+CLKOUT_PS2	CAN_Tx/mcp_can_dfs.h	206;"	d
+CLKOUT_PS4	CAN_Rx/mcp_can_dfs.h	207;"	d
+CLKOUT_PS4	CAN_Tx/mcp_can_dfs.h	207;"	d
+CLKOUT_PS8	CAN_Rx/mcp_can_dfs.h	208;"	d
+CLKOUT_PS8	CAN_Tx/mcp_can_dfs.h	208;"	d
+CORE_MS_TICK_RATE	CAN_Rx/hardware.h	116;"	d
+CORE_MS_TICK_RATE	CAN_Tx/hardware.h	116;"	d
+DEBUG_MODE	CAN_Rx/hardware.h	46;"	d
+DEBUG_MODE	CAN_Rx/mcp_can_dfs.h	49;"	d
+DEBUG_MODE	CAN_Tx/hardware.h	46;"	d
+DEBUG_MODE	CAN_Tx/mcp_can_dfs.h	49;"	d
+DIGITS_OFF	CAN_Rx/led7.h	102;"	d
+DIGITS_OFF	CAN_Tx/led7.h	102;"	d
+DIG_AN0	CAN_Rx/led7.h	85;"	d
+DIG_AN0	CAN_Tx/led7.h	85;"	d
+DIG_AN1	CAN_Rx/led7.h	86;"	d
+DIG_AN1	CAN_Tx/led7.h	86;"	d
+DIG_AN2	CAN_Rx/led7.h	87;"	d
+DIG_AN2	CAN_Tx/led7.h	87;"	d
+DIG_AN3	CAN_Rx/led7.h	88;"	d
+DIG_AN3	CAN_Tx/led7.h	88;"	d
+DIG_DLY	CAN_Rx/led7.h	69;"	d
+DIG_DLY	CAN_Tx/led7.h	69;"	d
+DPcfg	CAN_Rx/led7.h	60;"	d
+DPcfg	CAN_Tx/led7.h	60;"	d
+FALSE	CAN_Rx/hardware.h	34;"	d
+FALSE	CAN_Rx/swDelay.cpp	104;"	d	file:
+FALSE	CAN_Tx/hardware.h	34;"	d
+FALSE	CAN_Tx/swDelay.cpp	104;"	d	file:
+GetCoreClock	CAN_Rx/hardware.h	112;"	d
+GetCoreClock	CAN_Tx/hardware.h	112;"	d
+GetPeripheralClock	CAN_Rx/hardware.h	113;"	d
+GetPeripheralClock	CAN_Tx/hardware.h	113;"	d
+GetSystemClock	CAN_Rx/hardware.h	110;"	d
+GetSystemClock	CAN_Tx/hardware.h	110;"	d
+HLCD	CAN_Rx/LCDBBlib.h	32;"	d
+HLCD	CAN_Tx/LCDBBlib.h	32;"	d
+Hardware_Setup	CAN_Rx/hardware.cpp	/^void Hardware_Setup(void)$/;"	f
+Hardware_Setup	CAN_Tx/hardware.cpp	/^void Hardware_Setup(void)$/;"	f
+INT32U	CAN_Rx/mcp_can_dfs.h	41;"	d
+INT32U	CAN_Tx/mcp_can_dfs.h	41;"	d
+INT8U	CAN_Rx/mcp_can_dfs.h	45;"	d
+INT8U	CAN_Tx/mcp_can_dfs.h	45;"	d
+LCDCMD	CAN_Rx/LCDBBlib.h	29;"	d
+LCDCMD	CAN_Tx/LCDBBlib.h	29;"	d
+LCDDATA	CAN_Rx/LCDBBlib.h	28;"	d
+LCDDATA	CAN_Tx/LCDBBlib.h	28;"	d
+LCDDataRead	CAN_Rx/LCDBBlib.h	93;"	d
+LCDDataRead	CAN_Tx/LCDBBlib.h	93;"	d
+LCDDataWrite	CAN_Rx/LCDBBlib.h	84;"	d
+LCDDataWrite	CAN_Tx/LCDBBlib.h	84;"	d
+LCD_ADDR	CAN_Rx/LCDBBlib.h	44;"	d
+LCD_ADDR	CAN_Tx/LCDBBlib.h	44;"	d
+LCD_BF	CAN_Rx/LCDBBlib.h	45;"	d
+LCD_BF	CAN_Tx/LCDBBlib.h	45;"	d
+LCD_BF_bit	CAN_Rx/LCDBBlib.h	46;"	d
+LCD_BF_bit	CAN_Tx/LCDBBlib.h	46;"	d
+LCD_CFG	CAN_Rx/LCDBBlib.h	35;"	d
+LCD_CFG	CAN_Tx/LCDBBlib.h	35;"	d
+LCD_CLR	CAN_Rx/LCDBBlib.h	39;"	d
+LCD_CLR	CAN_Tx/LCDBBlib.h	39;"	d
+LCD_DATAbits	CAN_Rx/LCDBBlib.h	49;"	d
+LCD_DATAbits	CAN_Tx/LCDBBlib.h	49;"	d
+LCD_DDRAM	CAN_Rx/LCDBBlib.h	103;"	d
+LCD_DDRAM	CAN_Tx/LCDBBlib.h	103;"	d
+LCD_ENTRY	CAN_Rx/LCDBBlib.h	36;"	d
+LCD_ENTRY	CAN_Tx/LCDBBlib.h	36;"	d
+LCD_HOME	CAN_Rx/LCDBBlib.h	38;"	d
+LCD_HOME	CAN_Tx/LCDBBlib.h	38;"	d
+LCD_LINE1	CAN_Rx/LCDBBlib.h	104;"	d
+LCD_LINE1	CAN_Tx/LCDBBlib.h	104;"	d
+LCD_LINE2	CAN_Rx/LCDBBlib.h	105;"	d
+LCD_LINE2	CAN_Tx/LCDBBlib.h	105;"	d
+LCD_MAX_POS	CAN_Rx/LCDBBlib.h	40;"	d
+LCD_MAX_POS	CAN_Tx/LCDBBlib.h	40;"	d
+LCD_NEW_LINE	CAN_Rx/LCDBBlib.h	41;"	d
+LCD_NEW_LINE	CAN_Tx/LCDBBlib.h	41;"	d
+LCD_ON	CAN_Rx/LCDBBlib.h	37;"	d
+LCD_ON	CAN_Tx/LCDBBlib.h	37;"	d
+LCD_READ	CAN_Rx/LCDBBlib.h	48;"	d
+LCD_READ	CAN_Tx/LCDBBlib.h	48;"	d
+LCD_WRITE	CAN_Rx/LCDBBlib.h	47;"	d
+LCD_WRITE	CAN_Tx/LCDBBlib.h	47;"	d
+MAX_CHAR_IN_MESSAGE	CAN_Rx/MCP_CAN.h	40;"	d
+MAX_CHAR_IN_MESSAGE	CAN_Tx/MCP_CAN.h	40;"	d
+MCP25625_SELECT	CAN_Rx/mcp_can_dfs.h	411;"	d
+MCP25625_SELECT	CAN_Tx/mcp_can_dfs.h	411;"	d
+MCP25625_UNSELECT	CAN_Rx/mcp_can_dfs.h	412;"	d
+MCP25625_UNSELECT	CAN_Tx/mcp_can_dfs.h	412;"	d
+MCPCS	CAN_Rx/MCP_CAN.h	/^    INT8U   MCPCS;                         \/\/ Chip Select pin number$/;"	m	class:MCP_CAN
+MCPCS	CAN_Tx/MCP_CAN.h	/^    INT8U   MCPCS;                         \/\/ Chip Select pin number$/;"	m	class:MCP_CAN
+MCPDEBUG	CAN_Rx/mcp_can_dfs.h	404;"	d
+MCPDEBUG	CAN_Tx/mcp_can_dfs.h	404;"	d
+MCPDEBUG_TXBUF	CAN_Rx/mcp_can_dfs.h	405;"	d
+MCPDEBUG_TXBUF	CAN_Tx/mcp_can_dfs.h	405;"	d
+MCP_16MHZ	CAN_Rx/mcp_can_dfs.h	443;"	d
+MCP_16MHZ	CAN_Tx/mcp_can_dfs.h	443;"	d
+MCP_16MHZ	ps-spi-app.c	80;"	d	file:
+MCP_16MHz_1000kBPS_CFG1	CAN_Rx/mcp_can_dfs.h	312;"	d
+MCP_16MHz_1000kBPS_CFG1	CAN_Tx/mcp_can_dfs.h	312;"	d
+MCP_16MHz_1000kBPS_CFG2	CAN_Rx/mcp_can_dfs.h	313;"	d
+MCP_16MHz_1000kBPS_CFG2	CAN_Tx/mcp_can_dfs.h	313;"	d
+MCP_16MHz_1000kBPS_CFG3	CAN_Rx/mcp_can_dfs.h	314;"	d
+MCP_16MHz_1000kBPS_CFG3	CAN_Tx/mcp_can_dfs.h	314;"	d
+MCP_16MHz_100kBPS_CFG1	CAN_Rx/mcp_can_dfs.h	332;"	d
+MCP_16MHz_100kBPS_CFG1	CAN_Tx/mcp_can_dfs.h	332;"	d
+MCP_16MHz_100kBPS_CFG1	ps-spi-app.c	199;"	d	file:
+MCP_16MHz_100kBPS_CFG2	CAN_Rx/mcp_can_dfs.h	333;"	d
+MCP_16MHz_100kBPS_CFG2	CAN_Tx/mcp_can_dfs.h	333;"	d
+MCP_16MHz_100kBPS_CFG2	ps-spi-app.c	200;"	d	file:
+MCP_16MHz_100kBPS_CFG3	CAN_Rx/mcp_can_dfs.h	334;"	d
+MCP_16MHz_100kBPS_CFG3	CAN_Tx/mcp_can_dfs.h	334;"	d
+MCP_16MHz_100kBPS_CFG3	ps-spi-app.c	201;"	d	file:
+MCP_16MHz_10kBPS_CFG1	CAN_Rx/mcp_can_dfs.h	356;"	d
+MCP_16MHz_10kBPS_CFG1	CAN_Tx/mcp_can_dfs.h	356;"	d
+MCP_16MHz_10kBPS_CFG2	CAN_Rx/mcp_can_dfs.h	357;"	d
+MCP_16MHz_10kBPS_CFG2	CAN_Tx/mcp_can_dfs.h	357;"	d
+MCP_16MHz_10kBPS_CFG3	CAN_Rx/mcp_can_dfs.h	358;"	d
+MCP_16MHz_10kBPS_CFG3	CAN_Tx/mcp_can_dfs.h	358;"	d
+MCP_16MHz_125kBPS_CFG1	CAN_Rx/mcp_can_dfs.h	328;"	d
+MCP_16MHz_125kBPS_CFG1	CAN_Tx/mcp_can_dfs.h	328;"	d
+MCP_16MHz_125kBPS_CFG2	CAN_Rx/mcp_can_dfs.h	329;"	d
+MCP_16MHz_125kBPS_CFG2	CAN_Tx/mcp_can_dfs.h	329;"	d
+MCP_16MHz_125kBPS_CFG3	CAN_Rx/mcp_can_dfs.h	330;"	d
+MCP_16MHz_125kBPS_CFG3	CAN_Tx/mcp_can_dfs.h	330;"	d
+MCP_16MHz_200kBPS_CFG1	CAN_Rx/mcp_can_dfs.h	324;"	d
+MCP_16MHz_200kBPS_CFG1	CAN_Tx/mcp_can_dfs.h	324;"	d
+MCP_16MHz_200kBPS_CFG1	ps-spi-app.c	195;"	d	file:
+MCP_16MHz_200kBPS_CFG2	CAN_Rx/mcp_can_dfs.h	325;"	d
+MCP_16MHz_200kBPS_CFG2	CAN_Tx/mcp_can_dfs.h	325;"	d
+MCP_16MHz_200kBPS_CFG2	ps-spi-app.c	196;"	d	file:
+MCP_16MHz_200kBPS_CFG3	CAN_Rx/mcp_can_dfs.h	326;"	d
+MCP_16MHz_200kBPS_CFG3	CAN_Tx/mcp_can_dfs.h	326;"	d
+MCP_16MHz_200kBPS_CFG3	ps-spi-app.c	197;"	d	file:
+MCP_16MHz_20kBPS_CFG1	CAN_Rx/mcp_can_dfs.h	352;"	d
+MCP_16MHz_20kBPS_CFG1	CAN_Tx/mcp_can_dfs.h	352;"	d
+MCP_16MHz_20kBPS_CFG2	CAN_Rx/mcp_can_dfs.h	353;"	d
+MCP_16MHz_20kBPS_CFG2	CAN_Tx/mcp_can_dfs.h	353;"	d
+MCP_16MHz_20kBPS_CFG3	CAN_Rx/mcp_can_dfs.h	354;"	d
+MCP_16MHz_20kBPS_CFG3	CAN_Tx/mcp_can_dfs.h	354;"	d
+MCP_16MHz_250kBPS_CFG1	CAN_Rx/mcp_can_dfs.h	320;"	d
+MCP_16MHz_250kBPS_CFG1	CAN_Tx/mcp_can_dfs.h	320;"	d
+MCP_16MHz_250kBPS_CFG1	ps-spi-app.c	191;"	d	file:
+MCP_16MHz_250kBPS_CFG2	CAN_Rx/mcp_can_dfs.h	321;"	d
+MCP_16MHz_250kBPS_CFG2	CAN_Tx/mcp_can_dfs.h	321;"	d
+MCP_16MHz_250kBPS_CFG2	ps-spi-app.c	192;"	d	file:
+MCP_16MHz_250kBPS_CFG3	CAN_Rx/mcp_can_dfs.h	322;"	d
+MCP_16MHz_250kBPS_CFG3	CAN_Tx/mcp_can_dfs.h	322;"	d
+MCP_16MHz_250kBPS_CFG3	ps-spi-app.c	193;"	d	file:
+MCP_16MHz_33k3BPS_CFG1	CAN_Rx/mcp_can_dfs.h	348;"	d
+MCP_16MHz_33k3BPS_CFG1	CAN_Tx/mcp_can_dfs.h	348;"	d
+MCP_16MHz_33k3BPS_CFG2	CAN_Rx/mcp_can_dfs.h	349;"	d
+MCP_16MHz_33k3BPS_CFG2	CAN_Tx/mcp_can_dfs.h	349;"	d
+MCP_16MHz_33k3BPS_CFG3	CAN_Rx/mcp_can_dfs.h	350;"	d
+MCP_16MHz_33k3BPS_CFG3	CAN_Tx/mcp_can_dfs.h	350;"	d
+MCP_16MHz_40kBPS_CFG1	CAN_Rx/mcp_can_dfs.h	344;"	d
+MCP_16MHz_40kBPS_CFG1	CAN_Tx/mcp_can_dfs.h	344;"	d
+MCP_16MHz_40kBPS_CFG1	ps-spi-app.c	207;"	d	file:
+MCP_16MHz_40kBPS_CFG2	CAN_Rx/mcp_can_dfs.h	345;"	d
+MCP_16MHz_40kBPS_CFG2	CAN_Tx/mcp_can_dfs.h	345;"	d
+MCP_16MHz_40kBPS_CFG2	ps-spi-app.c	208;"	d	file:
+MCP_16MHz_40kBPS_CFG3	CAN_Rx/mcp_can_dfs.h	346;"	d
+MCP_16MHz_40kBPS_CFG3	CAN_Tx/mcp_can_dfs.h	346;"	d
+MCP_16MHz_40kBPS_CFG3	ps-spi-app.c	209;"	d	file:
+MCP_16MHz_500kBPS_CFG1	CAN_Rx/mcp_can_dfs.h	316;"	d
+MCP_16MHz_500kBPS_CFG1	CAN_Tx/mcp_can_dfs.h	316;"	d
+MCP_16MHz_500kBPS_CFG1	ps-spi-app.c	187;"	d	file:
+MCP_16MHz_500kBPS_CFG2	CAN_Rx/mcp_can_dfs.h	317;"	d
+MCP_16MHz_500kBPS_CFG2	CAN_Tx/mcp_can_dfs.h	317;"	d
+MCP_16MHz_500kBPS_CFG2	ps-spi-app.c	188;"	d	file:
+MCP_16MHz_500kBPS_CFG3	CAN_Rx/mcp_can_dfs.h	318;"	d
+MCP_16MHz_500kBPS_CFG3	CAN_Tx/mcp_can_dfs.h	318;"	d
+MCP_16MHz_500kBPS_CFG3	ps-spi-app.c	189;"	d	file:
+MCP_16MHz_50kBPS_CFG1	CAN_Rx/mcp_can_dfs.h	340;"	d
+MCP_16MHz_50kBPS_CFG1	CAN_Tx/mcp_can_dfs.h	340;"	d
+MCP_16MHz_50kBPS_CFG2	CAN_Rx/mcp_can_dfs.h	341;"	d
+MCP_16MHz_50kBPS_CFG2	CAN_Tx/mcp_can_dfs.h	341;"	d
+MCP_16MHz_50kBPS_CFG3	CAN_Rx/mcp_can_dfs.h	342;"	d
+MCP_16MHz_50kBPS_CFG3	CAN_Tx/mcp_can_dfs.h	342;"	d
+MCP_16MHz_5kBPS_CFG1	CAN_Rx/mcp_can_dfs.h	360;"	d
+MCP_16MHz_5kBPS_CFG1	CAN_Tx/mcp_can_dfs.h	360;"	d
+MCP_16MHz_5kBPS_CFG2	CAN_Rx/mcp_can_dfs.h	361;"	d
+MCP_16MHz_5kBPS_CFG2	CAN_Tx/mcp_can_dfs.h	361;"	d
+MCP_16MHz_5kBPS_CFG3	CAN_Rx/mcp_can_dfs.h	362;"	d
+MCP_16MHz_5kBPS_CFG3	CAN_Tx/mcp_can_dfs.h	362;"	d
+MCP_16MHz_80kBPS_CFG1	CAN_Rx/mcp_can_dfs.h	336;"	d
+MCP_16MHz_80kBPS_CFG1	CAN_Tx/mcp_can_dfs.h	336;"	d
+MCP_16MHz_80kBPS_CFG1	ps-spi-app.c	203;"	d	file:
+MCP_16MHz_80kBPS_CFG2	CAN_Rx/mcp_can_dfs.h	337;"	d
+MCP_16MHz_80kBPS_CFG2	CAN_Tx/mcp_can_dfs.h	337;"	d
+MCP_16MHz_80kBPS_CFG2	ps-spi-app.c	204;"	d	file:
+MCP_16MHz_80kBPS_CFG3	CAN_Rx/mcp_can_dfs.h	338;"	d
+MCP_16MHz_80kBPS_CFG3	CAN_Tx/mcp_can_dfs.h	338;"	d
+MCP_16MHz_80kBPS_CFG3	ps-spi-app.c	205;"	d	file:
+MCP_20MHZ	CAN_Rx/mcp_can_dfs.h	442;"	d
+MCP_20MHZ	CAN_Tx/mcp_can_dfs.h	442;"	d
+MCP_20MHZ	ps-spi-app.c	79;"	d	file:
+MCP_20MHz_1000kBPS_CFG1	CAN_Rx/mcp_can_dfs.h	367;"	d
+MCP_20MHz_1000kBPS_CFG1	CAN_Tx/mcp_can_dfs.h	367;"	d
+MCP_20MHz_1000kBPS_CFG2	CAN_Rx/mcp_can_dfs.h	368;"	d
+MCP_20MHz_1000kBPS_CFG2	CAN_Tx/mcp_can_dfs.h	368;"	d
+MCP_20MHz_1000kBPS_CFG3	CAN_Rx/mcp_can_dfs.h	369;"	d
+MCP_20MHz_1000kBPS_CFG3	CAN_Tx/mcp_can_dfs.h	369;"	d
+MCP_20MHz_100kBPS_CFG1	CAN_Rx/mcp_can_dfs.h	387;"	d
+MCP_20MHz_100kBPS_CFG1	CAN_Tx/mcp_can_dfs.h	387;"	d
+MCP_20MHz_100kBPS_CFG1	ps-spi-app.c	224;"	d	file:
+MCP_20MHz_100kBPS_CFG2	CAN_Rx/mcp_can_dfs.h	388;"	d
+MCP_20MHz_100kBPS_CFG2	CAN_Tx/mcp_can_dfs.h	388;"	d
+MCP_20MHz_100kBPS_CFG2	ps-spi-app.c	225;"	d	file:
+MCP_20MHz_100kBPS_CFG3	CAN_Rx/mcp_can_dfs.h	389;"	d
+MCP_20MHz_100kBPS_CFG3	CAN_Tx/mcp_can_dfs.h	389;"	d
+MCP_20MHz_100kBPS_CFG3	ps-spi-app.c	226;"	d	file:
+MCP_20MHz_125kBPS_CFG1	CAN_Rx/mcp_can_dfs.h	383;"	d
+MCP_20MHz_125kBPS_CFG1	CAN_Tx/mcp_can_dfs.h	383;"	d
+MCP_20MHz_125kBPS_CFG2	CAN_Rx/mcp_can_dfs.h	384;"	d
+MCP_20MHz_125kBPS_CFG2	CAN_Tx/mcp_can_dfs.h	384;"	d
+MCP_20MHz_125kBPS_CFG3	CAN_Rx/mcp_can_dfs.h	385;"	d
+MCP_20MHz_125kBPS_CFG3	CAN_Tx/mcp_can_dfs.h	385;"	d
+MCP_20MHz_200kBPS_CFG1	CAN_Rx/mcp_can_dfs.h	379;"	d
+MCP_20MHz_200kBPS_CFG1	CAN_Tx/mcp_can_dfs.h	379;"	d
+MCP_20MHz_200kBPS_CFG1	ps-spi-app.c	220;"	d	file:
+MCP_20MHz_200kBPS_CFG2	CAN_Rx/mcp_can_dfs.h	380;"	d
+MCP_20MHz_200kBPS_CFG2	CAN_Tx/mcp_can_dfs.h	380;"	d
+MCP_20MHz_200kBPS_CFG2	ps-spi-app.c	221;"	d	file:
+MCP_20MHz_200kBPS_CFG3	CAN_Rx/mcp_can_dfs.h	381;"	d
+MCP_20MHz_200kBPS_CFG3	CAN_Tx/mcp_can_dfs.h	381;"	d
+MCP_20MHz_200kBPS_CFG3	ps-spi-app.c	222;"	d	file:
+MCP_20MHz_250kBPS_CFG1	CAN_Rx/mcp_can_dfs.h	375;"	d
+MCP_20MHz_250kBPS_CFG1	CAN_Tx/mcp_can_dfs.h	375;"	d
+MCP_20MHz_250kBPS_CFG1	ps-spi-app.c	216;"	d	file:
+MCP_20MHz_250kBPS_CFG2	CAN_Rx/mcp_can_dfs.h	376;"	d
+MCP_20MHz_250kBPS_CFG2	CAN_Tx/mcp_can_dfs.h	376;"	d
+MCP_20MHz_250kBPS_CFG2	ps-spi-app.c	217;"	d	file:
+MCP_20MHz_250kBPS_CFG3	CAN_Rx/mcp_can_dfs.h	377;"	d
+MCP_20MHz_250kBPS_CFG3	CAN_Tx/mcp_can_dfs.h	377;"	d
+MCP_20MHz_250kBPS_CFG3	ps-spi-app.c	218;"	d	file:
+MCP_20MHz_40kBPS_CFG1	CAN_Rx/mcp_can_dfs.h	399;"	d
+MCP_20MHz_40kBPS_CFG1	CAN_Tx/mcp_can_dfs.h	399;"	d
+MCP_20MHz_40kBPS_CFG1	ps-spi-app.c	232;"	d	file:
+MCP_20MHz_40kBPS_CFG2	CAN_Rx/mcp_can_dfs.h	400;"	d
+MCP_20MHz_40kBPS_CFG2	CAN_Tx/mcp_can_dfs.h	400;"	d
+MCP_20MHz_40kBPS_CFG2	ps-spi-app.c	233;"	d	file:
+MCP_20MHz_40kBPS_CFG3	CAN_Rx/mcp_can_dfs.h	401;"	d
+MCP_20MHz_40kBPS_CFG3	CAN_Tx/mcp_can_dfs.h	401;"	d
+MCP_20MHz_40kBPS_CFG3	ps-spi-app.c	234;"	d	file:
+MCP_20MHz_500kBPS_CFG1	CAN_Rx/mcp_can_dfs.h	371;"	d
+MCP_20MHz_500kBPS_CFG1	CAN_Tx/mcp_can_dfs.h	371;"	d
+MCP_20MHz_500kBPS_CFG1	ps-spi-app.c	212;"	d	file:
+MCP_20MHz_500kBPS_CFG2	CAN_Rx/mcp_can_dfs.h	372;"	d
+MCP_20MHz_500kBPS_CFG2	CAN_Tx/mcp_can_dfs.h	372;"	d
+MCP_20MHz_500kBPS_CFG2	ps-spi-app.c	213;"	d	file:
+MCP_20MHz_500kBPS_CFG3	CAN_Rx/mcp_can_dfs.h	373;"	d
+MCP_20MHz_500kBPS_CFG3	CAN_Tx/mcp_can_dfs.h	373;"	d
+MCP_20MHz_500kBPS_CFG3	ps-spi-app.c	214;"	d	file:
+MCP_20MHz_50kBPS_CFG1	CAN_Rx/mcp_can_dfs.h	395;"	d
+MCP_20MHz_50kBPS_CFG1	CAN_Tx/mcp_can_dfs.h	395;"	d
+MCP_20MHz_50kBPS_CFG2	CAN_Rx/mcp_can_dfs.h	396;"	d
+MCP_20MHz_50kBPS_CFG2	CAN_Tx/mcp_can_dfs.h	396;"	d
+MCP_20MHz_50kBPS_CFG3	CAN_Rx/mcp_can_dfs.h	397;"	d
+MCP_20MHz_50kBPS_CFG3	CAN_Tx/mcp_can_dfs.h	397;"	d
+MCP_20MHz_80kBPS_CFG1	CAN_Rx/mcp_can_dfs.h	391;"	d
+MCP_20MHz_80kBPS_CFG1	CAN_Tx/mcp_can_dfs.h	391;"	d
+MCP_20MHz_80kBPS_CFG1	ps-spi-app.c	228;"	d	file:
+MCP_20MHz_80kBPS_CFG2	CAN_Rx/mcp_can_dfs.h	392;"	d
+MCP_20MHz_80kBPS_CFG2	CAN_Tx/mcp_can_dfs.h	392;"	d
+MCP_20MHz_80kBPS_CFG2	ps-spi-app.c	229;"	d	file:
+MCP_20MHz_80kBPS_CFG3	CAN_Rx/mcp_can_dfs.h	393;"	d
+MCP_20MHz_80kBPS_CFG3	CAN_Tx/mcp_can_dfs.h	393;"	d
+MCP_20MHz_80kBPS_CFG3	ps-spi-app.c	230;"	d	file:
+MCP_8MHZ	CAN_Rx/mcp_can_dfs.h	444;"	d
+MCP_8MHZ	CAN_Tx/mcp_can_dfs.h	444;"	d
+MCP_8MHZ	ps-spi-app.c	81;"	d	file:
+MCP_8MHz_1000kBPS_CFG1	CAN_Rx/mcp_can_dfs.h	253;"	d
+MCP_8MHz_1000kBPS_CFG1	CAN_Tx/mcp_can_dfs.h	253;"	d
+MCP_8MHz_1000kBPS_CFG2	CAN_Rx/mcp_can_dfs.h	254;"	d
+MCP_8MHz_1000kBPS_CFG2	CAN_Tx/mcp_can_dfs.h	254;"	d
+MCP_8MHz_1000kBPS_CFG3	CAN_Rx/mcp_can_dfs.h	255;"	d
+MCP_8MHz_1000kBPS_CFG3	CAN_Tx/mcp_can_dfs.h	255;"	d
+MCP_8MHz_100kBPS_CFG1	CAN_Rx/mcp_can_dfs.h	273;"	d
+MCP_8MHz_100kBPS_CFG1	CAN_Tx/mcp_can_dfs.h	273;"	d
+MCP_8MHz_100kBPS_CFG1	ps-spi-app.c	174;"	d	file:
+MCP_8MHz_100kBPS_CFG2	CAN_Rx/mcp_can_dfs.h	274;"	d
+MCP_8MHz_100kBPS_CFG2	CAN_Tx/mcp_can_dfs.h	274;"	d
+MCP_8MHz_100kBPS_CFG2	ps-spi-app.c	175;"	d	file:
+MCP_8MHz_100kBPS_CFG3	CAN_Rx/mcp_can_dfs.h	275;"	d
+MCP_8MHz_100kBPS_CFG3	CAN_Tx/mcp_can_dfs.h	275;"	d
+MCP_8MHz_100kBPS_CFG3	ps-spi-app.c	176;"	d	file:
+MCP_8MHz_10kBPS_CFG1	CAN_Rx/mcp_can_dfs.h	301;"	d
+MCP_8MHz_10kBPS_CFG1	CAN_Tx/mcp_can_dfs.h	301;"	d
+MCP_8MHz_10kBPS_CFG2	CAN_Rx/mcp_can_dfs.h	302;"	d
+MCP_8MHz_10kBPS_CFG2	CAN_Tx/mcp_can_dfs.h	302;"	d
+MCP_8MHz_10kBPS_CFG3	CAN_Rx/mcp_can_dfs.h	303;"	d
+MCP_8MHz_10kBPS_CFG3	CAN_Tx/mcp_can_dfs.h	303;"	d
+MCP_8MHz_125kBPS_CFG1	CAN_Rx/mcp_can_dfs.h	269;"	d
+MCP_8MHz_125kBPS_CFG1	CAN_Tx/mcp_can_dfs.h	269;"	d
+MCP_8MHz_125kBPS_CFG2	CAN_Rx/mcp_can_dfs.h	270;"	d
+MCP_8MHz_125kBPS_CFG2	CAN_Tx/mcp_can_dfs.h	270;"	d
+MCP_8MHz_125kBPS_CFG3	CAN_Rx/mcp_can_dfs.h	271;"	d
+MCP_8MHz_125kBPS_CFG3	CAN_Tx/mcp_can_dfs.h	271;"	d
+MCP_8MHz_200kBPS_CFG1	CAN_Rx/mcp_can_dfs.h	265;"	d
+MCP_8MHz_200kBPS_CFG1	CAN_Tx/mcp_can_dfs.h	265;"	d
+MCP_8MHz_200kBPS_CFG1	ps-spi-app.c	170;"	d	file:
+MCP_8MHz_200kBPS_CFG2	CAN_Rx/mcp_can_dfs.h	266;"	d
+MCP_8MHz_200kBPS_CFG2	CAN_Tx/mcp_can_dfs.h	266;"	d
+MCP_8MHz_200kBPS_CFG2	ps-spi-app.c	171;"	d	file:
+MCP_8MHz_200kBPS_CFG3	CAN_Rx/mcp_can_dfs.h	267;"	d
+MCP_8MHz_200kBPS_CFG3	CAN_Tx/mcp_can_dfs.h	267;"	d
+MCP_8MHz_200kBPS_CFG3	ps-spi-app.c	172;"	d	file:
+MCP_8MHz_20kBPS_CFG1	CAN_Rx/mcp_can_dfs.h	297;"	d
+MCP_8MHz_20kBPS_CFG1	CAN_Tx/mcp_can_dfs.h	297;"	d
+MCP_8MHz_20kBPS_CFG2	CAN_Rx/mcp_can_dfs.h	298;"	d
+MCP_8MHz_20kBPS_CFG2	CAN_Tx/mcp_can_dfs.h	298;"	d
+MCP_8MHz_20kBPS_CFG3	CAN_Rx/mcp_can_dfs.h	299;"	d
+MCP_8MHz_20kBPS_CFG3	CAN_Tx/mcp_can_dfs.h	299;"	d
+MCP_8MHz_250kBPS_CFG1	CAN_Rx/mcp_can_dfs.h	261;"	d
+MCP_8MHz_250kBPS_CFG1	CAN_Tx/mcp_can_dfs.h	261;"	d
+MCP_8MHz_250kBPS_CFG1	ps-spi-app.c	166;"	d	file:
+MCP_8MHz_250kBPS_CFG2	CAN_Rx/mcp_can_dfs.h	262;"	d
+MCP_8MHz_250kBPS_CFG2	CAN_Tx/mcp_can_dfs.h	262;"	d
+MCP_8MHz_250kBPS_CFG2	ps-spi-app.c	167;"	d	file:
+MCP_8MHz_250kBPS_CFG3	CAN_Rx/mcp_can_dfs.h	263;"	d
+MCP_8MHz_250kBPS_CFG3	CAN_Tx/mcp_can_dfs.h	263;"	d
+MCP_8MHz_250kBPS_CFG3	ps-spi-app.c	168;"	d	file:
+MCP_8MHz_31k25BPS_CFG1	CAN_Rx/mcp_can_dfs.h	293;"	d
+MCP_8MHz_31k25BPS_CFG1	CAN_Tx/mcp_can_dfs.h	293;"	d
+MCP_8MHz_31k25BPS_CFG2	CAN_Rx/mcp_can_dfs.h	294;"	d
+MCP_8MHz_31k25BPS_CFG2	CAN_Tx/mcp_can_dfs.h	294;"	d
+MCP_8MHz_31k25BPS_CFG3	CAN_Rx/mcp_can_dfs.h	295;"	d
+MCP_8MHz_31k25BPS_CFG3	CAN_Tx/mcp_can_dfs.h	295;"	d
+MCP_8MHz_33k3BPS_CFG1	CAN_Rx/mcp_can_dfs.h	289;"	d
+MCP_8MHz_33k3BPS_CFG1	CAN_Tx/mcp_can_dfs.h	289;"	d
+MCP_8MHz_33k3BPS_CFG2	CAN_Rx/mcp_can_dfs.h	290;"	d
+MCP_8MHz_33k3BPS_CFG2	CAN_Tx/mcp_can_dfs.h	290;"	d
+MCP_8MHz_33k3BPS_CFG3	CAN_Rx/mcp_can_dfs.h	291;"	d
+MCP_8MHz_33k3BPS_CFG3	CAN_Tx/mcp_can_dfs.h	291;"	d
+MCP_8MHz_40kBPS_CFG1	CAN_Rx/mcp_can_dfs.h	285;"	d
+MCP_8MHz_40kBPS_CFG1	CAN_Tx/mcp_can_dfs.h	285;"	d
+MCP_8MHz_40kBPS_CFG1	ps-spi-app.c	182;"	d	file:
+MCP_8MHz_40kBPS_CFG2	CAN_Rx/mcp_can_dfs.h	286;"	d
+MCP_8MHz_40kBPS_CFG2	CAN_Tx/mcp_can_dfs.h	286;"	d
+MCP_8MHz_40kBPS_CFG2	ps-spi-app.c	183;"	d	file:
+MCP_8MHz_40kBPS_CFG3	CAN_Rx/mcp_can_dfs.h	287;"	d
+MCP_8MHz_40kBPS_CFG3	CAN_Tx/mcp_can_dfs.h	287;"	d
+MCP_8MHz_40kBPS_CFG3	ps-spi-app.c	184;"	d	file:
+MCP_8MHz_500kBPS_CFG1	CAN_Rx/mcp_can_dfs.h	257;"	d
+MCP_8MHz_500kBPS_CFG1	CAN_Tx/mcp_can_dfs.h	257;"	d
+MCP_8MHz_500kBPS_CFG1	ps-spi-app.c	162;"	d	file:
+MCP_8MHz_500kBPS_CFG2	CAN_Rx/mcp_can_dfs.h	258;"	d
+MCP_8MHz_500kBPS_CFG2	CAN_Tx/mcp_can_dfs.h	258;"	d
+MCP_8MHz_500kBPS_CFG2	ps-spi-app.c	163;"	d	file:
+MCP_8MHz_500kBPS_CFG3	CAN_Rx/mcp_can_dfs.h	259;"	d
+MCP_8MHz_500kBPS_CFG3	CAN_Tx/mcp_can_dfs.h	259;"	d
+MCP_8MHz_500kBPS_CFG3	ps-spi-app.c	164;"	d	file:
+MCP_8MHz_50kBPS_CFG1	CAN_Rx/mcp_can_dfs.h	281;"	d
+MCP_8MHz_50kBPS_CFG1	CAN_Tx/mcp_can_dfs.h	281;"	d
+MCP_8MHz_50kBPS_CFG2	CAN_Rx/mcp_can_dfs.h	282;"	d
+MCP_8MHz_50kBPS_CFG2	CAN_Tx/mcp_can_dfs.h	282;"	d
+MCP_8MHz_50kBPS_CFG3	CAN_Rx/mcp_can_dfs.h	283;"	d
+MCP_8MHz_50kBPS_CFG3	CAN_Tx/mcp_can_dfs.h	283;"	d
+MCP_8MHz_5kBPS_CFG1	CAN_Rx/mcp_can_dfs.h	305;"	d
+MCP_8MHz_5kBPS_CFG1	CAN_Tx/mcp_can_dfs.h	305;"	d
+MCP_8MHz_5kBPS_CFG2	CAN_Rx/mcp_can_dfs.h	306;"	d
+MCP_8MHz_5kBPS_CFG2	CAN_Tx/mcp_can_dfs.h	306;"	d
+MCP_8MHz_5kBPS_CFG3	CAN_Rx/mcp_can_dfs.h	307;"	d
+MCP_8MHz_5kBPS_CFG3	CAN_Tx/mcp_can_dfs.h	307;"	d
+MCP_8MHz_80kBPS_CFG1	CAN_Rx/mcp_can_dfs.h	277;"	d
+MCP_8MHz_80kBPS_CFG1	CAN_Tx/mcp_can_dfs.h	277;"	d
+MCP_8MHz_80kBPS_CFG1	ps-spi-app.c	178;"	d	file:
+MCP_8MHz_80kBPS_CFG2	CAN_Rx/mcp_can_dfs.h	278;"	d
+MCP_8MHz_80kBPS_CFG2	CAN_Tx/mcp_can_dfs.h	278;"	d
+MCP_8MHz_80kBPS_CFG2	ps-spi-app.c	179;"	d	file:
+MCP_8MHz_80kBPS_CFG3	CAN_Rx/mcp_can_dfs.h	279;"	d
+MCP_8MHz_80kBPS_CFG3	CAN_Tx/mcp_can_dfs.h	279;"	d
+MCP_8MHz_80kBPS_CFG3	ps-spi-app.c	180;"	d	file:
+MCP_ALLTXBUSY	CAN_Rx/mcp_can_dfs.h	416;"	d
+MCP_ALLTXBUSY	CAN_Tx/mcp_can_dfs.h	416;"	d
+MCP_ALLTXBUSY	ps-spi-app.c	51;"	d	file:
+MCP_ANY	CAN_Rx/mcp_can_dfs.h	440;"	d
+MCP_ANY	CAN_Tx/mcp_can_dfs.h	440;"	d
+MCP_ANY	ps-spi-app.c	76;"	d	file:
+MCP_BITMOD	CAN_Rx/mcp_can_dfs.h	170;"	d
+MCP_BITMOD	CAN_Tx/mcp_can_dfs.h	170;"	d
+MCP_BITMOD	ps-spi-app.c	159;"	d	file:
+MCP_CAN	CAN_Rx/MCP_CAN.cpp	/^MCP_CAN::MCP_CAN(INT8U _CS)$/;"	f	class:MCP_CAN
+MCP_CAN	CAN_Rx/MCP_CAN.h	/^class MCP_CAN$/;"	c
+MCP_CAN	CAN_Tx/MCP_CAN.cpp	/^MCP_CAN::MCP_CAN(INT8U _CS)$/;"	f	class:MCP_CAN
+MCP_CAN	CAN_Tx/MCP_CAN.h	/^class MCP_CAN$/;"	c
+MCP_CANCTRL	CAN_Rx/mcp_can_dfs.h	117;"	d
+MCP_CANCTRL	CAN_Tx/mcp_can_dfs.h	117;"	d
+MCP_CANCTRL	ps-spi-app.c	105;"	d	file:
+MCP_CANINTE	CAN_Rx/mcp_can_dfs.h	143;"	d
+MCP_CANINTE	CAN_Tx/mcp_can_dfs.h	143;"	d
+MCP_CANINTE	ps-spi-app.c	131;"	d	file:
+MCP_CANINTF	CAN_Rx/mcp_can_dfs.h	144;"	d
+MCP_CANINTF	CAN_Tx/mcp_can_dfs.h	144;"	d
+MCP_CANINTF	ps-spi-app.c	132;"	d	file:
+MCP_CANSTAT	CAN_Rx/mcp_can_dfs.h	116;"	d
+MCP_CANSTAT	CAN_Tx/mcp_can_dfs.h	116;"	d
+MCP_CANSTAT	ps-spi-app.c	104;"	d	file:
+MCP_CNF1	CAN_Rx/mcp_can_dfs.h	142;"	d
+MCP_CNF1	CAN_Tx/mcp_can_dfs.h	142;"	d
+MCP_CNF1	ps-spi-app.c	130;"	d	file:
+MCP_CNF2	CAN_Rx/mcp_can_dfs.h	141;"	d
+MCP_CNF2	CAN_Tx/mcp_can_dfs.h	141;"	d
+MCP_CNF2	ps-spi-app.c	129;"	d	file:
+MCP_CNF3	CAN_Rx/mcp_can_dfs.h	140;"	d
+MCP_CNF3	CAN_Tx/mcp_can_dfs.h	140;"	d
+MCP_CNF3	ps-spi-app.c	128;"	d	file:
+MCP_CONFIG	ps-spi-app.c	69;"	d	file:
+MCP_DLC_MASK	CAN_Rx/mcp_can_dfs.h	61;"	d
+MCP_DLC_MASK	CAN_Tx/mcp_can_dfs.h	61;"	d
+MCP_EFLG	CAN_Rx/mcp_can_dfs.h	145;"	d
+MCP_EFLG	CAN_Tx/mcp_can_dfs.h	145;"	d
+MCP_EFLG	ps-spi-app.c	133;"	d	file:
+MCP_EFLG_ERRORMASK	CAN_Rx/mcp_can_dfs.h	98;"	d
+MCP_EFLG_ERRORMASK	CAN_Tx/mcp_can_dfs.h	98;"	d
+MCP_EFLG_EWARN	CAN_Rx/mcp_can_dfs.h	97;"	d
+MCP_EFLG_EWARN	CAN_Tx/mcp_can_dfs.h	97;"	d
+MCP_EFLG_RX0OVR	CAN_Rx/mcp_can_dfs.h	91;"	d
+MCP_EFLG_RX0OVR	CAN_Tx/mcp_can_dfs.h	91;"	d
+MCP_EFLG_RX1OVR	CAN_Rx/mcp_can_dfs.h	90;"	d
+MCP_EFLG_RX1OVR	CAN_Tx/mcp_can_dfs.h	90;"	d
+MCP_EFLG_RXEP	CAN_Rx/mcp_can_dfs.h	94;"	d
+MCP_EFLG_RXEP	CAN_Tx/mcp_can_dfs.h	94;"	d
+MCP_EFLG_RXWAR	CAN_Rx/mcp_can_dfs.h	96;"	d
+MCP_EFLG_RXWAR	CAN_Tx/mcp_can_dfs.h	96;"	d
+MCP_EFLG_TXBO	CAN_Rx/mcp_can_dfs.h	92;"	d
+MCP_EFLG_TXBO	CAN_Tx/mcp_can_dfs.h	92;"	d
+MCP_EFLG_TXEP	CAN_Rx/mcp_can_dfs.h	93;"	d
+MCP_EFLG_TXEP	CAN_Tx/mcp_can_dfs.h	93;"	d
+MCP_EFLG_TXWAR	CAN_Rx/mcp_can_dfs.h	95;"	d
+MCP_EFLG_TXWAR	CAN_Tx/mcp_can_dfs.h	95;"	d
+MCP_EID0	CAN_Rx/mcp_can_dfs.h	58;"	d
+MCP_EID0	CAN_Tx/mcp_can_dfs.h	58;"	d
+MCP_EID0	ps-spi-app.c	57;"	d	file:
+MCP_EID8	CAN_Rx/mcp_can_dfs.h	57;"	d
+MCP_EID8	CAN_Tx/mcp_can_dfs.h	57;"	d
+MCP_EID8	ps-spi-app.c	56;"	d	file:
+MCP_ERRIF	CAN_Rx/mcp_can_dfs.h	245;"	d
+MCP_ERRIF	CAN_Tx/mcp_can_dfs.h	245;"	d
+MCP_EXT	CAN_Rx/mcp_can_dfs.h	439;"	d
+MCP_EXT	CAN_Tx/mcp_can_dfs.h	439;"	d
+MCP_EXT	ps-spi-app.c	75;"	d	file:
+MCP_LISTENONLY	CAN_Rx/mcp_can_dfs.h	197;"	d
+MCP_LISTENONLY	CAN_Tx/mcp_can_dfs.h	197;"	d
+MCP_LISTENONLY	ps-spi-app.c	68;"	d	file:
+MCP_LOAD_TX0	CAN_Rx/mcp_can_dfs.h	172;"	d
+MCP_LOAD_TX0	CAN_Tx/mcp_can_dfs.h	172;"	d
+MCP_LOAD_TX1	CAN_Rx/mcp_can_dfs.h	173;"	d
+MCP_LOAD_TX1	CAN_Tx/mcp_can_dfs.h	173;"	d
+MCP_LOAD_TX2	CAN_Rx/mcp_can_dfs.h	174;"	d
+MCP_LOAD_TX2	CAN_Tx/mcp_can_dfs.h	174;"	d
+MCP_LOOPBACK	CAN_Rx/mcp_can_dfs.h	196;"	d
+MCP_LOOPBACK	CAN_Tx/mcp_can_dfs.h	196;"	d
+MCP_LOOPBACK	ps-spi-app.c	67;"	d	file:
+MCP_MERRF	CAN_Rx/mcp_can_dfs.h	247;"	d
+MCP_MERRF	CAN_Tx/mcp_can_dfs.h	247;"	d
+MCP_NORMAL	CAN_Rx/mcp_can_dfs.h	194;"	d
+MCP_NORMAL	CAN_Tx/mcp_can_dfs.h	194;"	d
+MCP_NORMAL	ps-spi-app.c	65;"	d	file:
+MCP_NO_INT	CAN_Rx/mcp_can_dfs.h	158;"	d
+MCP_NO_INT	CAN_Tx/mcp_can_dfs.h	158;"	d
+MCP_NO_INT	ps-spi-app.c	145;"	d	file:
+MCP_N_TXBUFFERS	CAN_Rx/mcp_can_dfs.h	406;"	d
+MCP_N_TXBUFFERS	CAN_Tx/mcp_can_dfs.h	406;"	d
+MCP_N_TXBUFFERS	ps-spi-app.c	151;"	d	file:
+MCP_POWERUP	ps-spi-app.c	70;"	d	file:
+MCP_RD_STATUS	ps-spi-app.c	157;"	d	file:
+MCP_READ	CAN_Rx/mcp_can_dfs.h	168;"	d
+MCP_READ	CAN_Tx/mcp_can_dfs.h	168;"	d
+MCP_READ	ps-spi-app.c	155;"	d	file:
+MCP_READ_RX0	CAN_Rx/mcp_can_dfs.h	181;"	d
+MCP_READ_RX0	CAN_Tx/mcp_can_dfs.h	181;"	d
+MCP_READ_RX1	CAN_Rx/mcp_can_dfs.h	182;"	d
+MCP_READ_RX1	CAN_Tx/mcp_can_dfs.h	182;"	d
+MCP_READ_STATUS	CAN_Rx/mcp_can_dfs.h	184;"	d
+MCP_READ_STATUS	CAN_Tx/mcp_can_dfs.h	184;"	d
+MCP_REC	CAN_Rx/mcp_can_dfs.h	131;"	d
+MCP_REC	CAN_Tx/mcp_can_dfs.h	131;"	d
+MCP_REC	ps-spi-app.c	119;"	d	file:
+MCP_RESET	CAN_Rx/mcp_can_dfs.h	188;"	d
+MCP_RESET	CAN_Tx/mcp_can_dfs.h	188;"	d
+MCP_RESET	ps-spi-app.c	154;"	d	file:
+MCP_RTR_MASK	CAN_Rx/mcp_can_dfs.h	62;"	d
+MCP_RTR_MASK	CAN_Tx/mcp_can_dfs.h	62;"	d
+MCP_RTR_MASK	ps-spi-app.c	150;"	d	file:
+MCP_RTS_ALL	CAN_Rx/mcp_can_dfs.h	179;"	d
+MCP_RTS_ALL	CAN_Tx/mcp_can_dfs.h	179;"	d
+MCP_RTS_TX0	CAN_Rx/mcp_can_dfs.h	176;"	d
+MCP_RTS_TX0	CAN_Tx/mcp_can_dfs.h	176;"	d
+MCP_RTS_TX1	CAN_Rx/mcp_can_dfs.h	177;"	d
+MCP_RTS_TX1	CAN_Tx/mcp_can_dfs.h	177;"	d
+MCP_RTS_TX2	CAN_Rx/mcp_can_dfs.h	178;"	d
+MCP_RTS_TX2	CAN_Tx/mcp_can_dfs.h	178;"	d
+MCP_RX0IF	CAN_Rx/mcp_can_dfs.h	240;"	d
+MCP_RX0IF	CAN_Tx/mcp_can_dfs.h	240;"	d
+MCP_RX1IF	CAN_Rx/mcp_can_dfs.h	241;"	d
+MCP_RX1IF	CAN_Tx/mcp_can_dfs.h	241;"	d
+MCP_RXB0CTRL	CAN_Rx/mcp_can_dfs.h	149;"	d
+MCP_RXB0CTRL	CAN_Tx/mcp_can_dfs.h	149;"	d
+MCP_RXB0CTRL	ps-spi-app.c	137;"	d	file:
+MCP_RXB0SIDH	CAN_Rx/mcp_can_dfs.h	150;"	d
+MCP_RXB0SIDH	CAN_Tx/mcp_can_dfs.h	150;"	d
+MCP_RXB0SIDH	ps-spi-app.c	138;"	d	file:
+MCP_RXB1CTRL	CAN_Rx/mcp_can_dfs.h	151;"	d
+MCP_RXB1CTRL	CAN_Tx/mcp_can_dfs.h	151;"	d
+MCP_RXB1CTRL	ps-spi-app.c	139;"	d	file:
+MCP_RXB1SIDH	CAN_Rx/mcp_can_dfs.h	152;"	d
+MCP_RXB1SIDH	CAN_Tx/mcp_can_dfs.h	152;"	d
+MCP_RXB1SIDH	ps-spi-app.c	140;"	d	file:
+MCP_RXBUF_0	CAN_Rx/mcp_can_dfs.h	408;"	d
+MCP_RXBUF_0	CAN_Tx/mcp_can_dfs.h	408;"	d
+MCP_RXBUF_1	CAN_Rx/mcp_can_dfs.h	409;"	d
+MCP_RXBUF_1	CAN_Tx/mcp_can_dfs.h	409;"	d
+MCP_RXB_BUKT_MASK	CAN_Rx/mcp_can_dfs.h	69;"	d
+MCP_RXB_BUKT_MASK	CAN_Tx/mcp_can_dfs.h	69;"	d
+MCP_RXB_IDE_M	CAN_Rx/mcp_can_dfs.h	83;"	d
+MCP_RXB_IDE_M	CAN_Tx/mcp_can_dfs.h	83;"	d
+MCP_RXB_RTR_M	CAN_Rx/mcp_can_dfs.h	84;"	d
+MCP_RXB_RTR_M	CAN_Tx/mcp_can_dfs.h	84;"	d
+MCP_RXB_RX_ANY	CAN_Rx/mcp_can_dfs.h	64;"	d
+MCP_RXB_RX_ANY	CAN_Tx/mcp_can_dfs.h	64;"	d
+MCP_RXB_RX_EXT	CAN_Rx/mcp_can_dfs.h	65;"	d
+MCP_RXB_RX_EXT	CAN_Tx/mcp_can_dfs.h	65;"	d
+MCP_RXB_RX_MASK	CAN_Rx/mcp_can_dfs.h	68;"	d
+MCP_RXB_RX_MASK	CAN_Tx/mcp_can_dfs.h	68;"	d
+MCP_RXB_RX_STD	CAN_Rx/mcp_can_dfs.h	66;"	d
+MCP_RXB_RX_STD	CAN_Tx/mcp_can_dfs.h	66;"	d
+MCP_RXB_RX_STDEXT	CAN_Rx/mcp_can_dfs.h	67;"	d
+MCP_RXB_RX_STDEXT	CAN_Tx/mcp_can_dfs.h	67;"	d
+MCP_RXF0EID0	CAN_Rx/mcp_can_dfs.h	107;"	d
+MCP_RXF0EID0	CAN_Tx/mcp_can_dfs.h	107;"	d
+MCP_RXF0EID0	ps-spi-app.c	95;"	d	file:
+MCP_RXF0EID8	CAN_Rx/mcp_can_dfs.h	106;"	d
+MCP_RXF0EID8	CAN_Tx/mcp_can_dfs.h	106;"	d
+MCP_RXF0EID8	ps-spi-app.c	94;"	d	file:
+MCP_RXF0SIDH	CAN_Rx/mcp_can_dfs.h	104;"	d
+MCP_RXF0SIDH	CAN_Tx/mcp_can_dfs.h	104;"	d
+MCP_RXF0SIDH	ps-spi-app.c	92;"	d	file:
+MCP_RXF0SIDL	CAN_Rx/mcp_can_dfs.h	105;"	d
+MCP_RXF0SIDL	CAN_Tx/mcp_can_dfs.h	105;"	d
+MCP_RXF0SIDL	ps-spi-app.c	93;"	d	file:
+MCP_RXF1EID0	CAN_Rx/mcp_can_dfs.h	111;"	d
+MCP_RXF1EID0	CAN_Tx/mcp_can_dfs.h	111;"	d
+MCP_RXF1EID0	ps-spi-app.c	99;"	d	file:
+MCP_RXF1EID8	CAN_Rx/mcp_can_dfs.h	110;"	d
+MCP_RXF1EID8	CAN_Tx/mcp_can_dfs.h	110;"	d
+MCP_RXF1EID8	ps-spi-app.c	98;"	d	file:
+MCP_RXF1SIDH	CAN_Rx/mcp_can_dfs.h	108;"	d
+MCP_RXF1SIDH	CAN_Tx/mcp_can_dfs.h	108;"	d
+MCP_RXF1SIDH	ps-spi-app.c	96;"	d	file:
+MCP_RXF1SIDL	CAN_Rx/mcp_can_dfs.h	109;"	d
+MCP_RXF1SIDL	CAN_Tx/mcp_can_dfs.h	109;"	d
+MCP_RXF1SIDL	ps-spi-app.c	97;"	d	file:
+MCP_RXF2EID0	CAN_Rx/mcp_can_dfs.h	115;"	d
+MCP_RXF2EID0	CAN_Tx/mcp_can_dfs.h	115;"	d
+MCP_RXF2EID0	ps-spi-app.c	103;"	d	file:
+MCP_RXF2EID8	CAN_Rx/mcp_can_dfs.h	114;"	d
+MCP_RXF2EID8	CAN_Tx/mcp_can_dfs.h	114;"	d
+MCP_RXF2EID8	ps-spi-app.c	102;"	d	file:
+MCP_RXF2SIDH	CAN_Rx/mcp_can_dfs.h	112;"	d
+MCP_RXF2SIDH	CAN_Tx/mcp_can_dfs.h	112;"	d
+MCP_RXF2SIDH	ps-spi-app.c	100;"	d	file:
+MCP_RXF2SIDL	CAN_Rx/mcp_can_dfs.h	113;"	d
+MCP_RXF2SIDL	CAN_Tx/mcp_can_dfs.h	113;"	d
+MCP_RXF2SIDL	ps-spi-app.c	101;"	d	file:
+MCP_RXF3EID0	CAN_Rx/mcp_can_dfs.h	121;"	d
+MCP_RXF3EID0	CAN_Tx/mcp_can_dfs.h	121;"	d
+MCP_RXF3EID0	ps-spi-app.c	109;"	d	file:
+MCP_RXF3EID8	CAN_Rx/mcp_can_dfs.h	120;"	d
+MCP_RXF3EID8	CAN_Tx/mcp_can_dfs.h	120;"	d
+MCP_RXF3EID8	ps-spi-app.c	108;"	d	file:
+MCP_RXF3SIDH	CAN_Rx/mcp_can_dfs.h	118;"	d
+MCP_RXF3SIDH	CAN_Tx/mcp_can_dfs.h	118;"	d
+MCP_RXF3SIDH	ps-spi-app.c	106;"	d	file:
+MCP_RXF3SIDL	CAN_Rx/mcp_can_dfs.h	119;"	d
+MCP_RXF3SIDL	CAN_Tx/mcp_can_dfs.h	119;"	d
+MCP_RXF3SIDL	ps-spi-app.c	107;"	d	file:
+MCP_RXF4EID0	CAN_Rx/mcp_can_dfs.h	125;"	d
+MCP_RXF4EID0	CAN_Tx/mcp_can_dfs.h	125;"	d
+MCP_RXF4EID0	ps-spi-app.c	113;"	d	file:
+MCP_RXF4EID8	CAN_Rx/mcp_can_dfs.h	124;"	d
+MCP_RXF4EID8	CAN_Tx/mcp_can_dfs.h	124;"	d
+MCP_RXF4EID8	ps-spi-app.c	112;"	d	file:
+MCP_RXF4SIDH	CAN_Rx/mcp_can_dfs.h	122;"	d
+MCP_RXF4SIDH	CAN_Tx/mcp_can_dfs.h	122;"	d
+MCP_RXF4SIDH	ps-spi-app.c	110;"	d	file:
+MCP_RXF4SIDL	CAN_Rx/mcp_can_dfs.h	123;"	d
+MCP_RXF4SIDL	CAN_Tx/mcp_can_dfs.h	123;"	d
+MCP_RXF4SIDL	ps-spi-app.c	111;"	d	file:
+MCP_RXF5EID0	CAN_Rx/mcp_can_dfs.h	129;"	d
+MCP_RXF5EID0	CAN_Tx/mcp_can_dfs.h	129;"	d
+MCP_RXF5EID0	ps-spi-app.c	117;"	d	file:
+MCP_RXF5EID8	CAN_Rx/mcp_can_dfs.h	128;"	d
+MCP_RXF5EID8	CAN_Tx/mcp_can_dfs.h	128;"	d
+MCP_RXF5EID8	ps-spi-app.c	116;"	d	file:
+MCP_RXF5SIDH	CAN_Rx/mcp_can_dfs.h	126;"	d
+MCP_RXF5SIDH	CAN_Tx/mcp_can_dfs.h	126;"	d
+MCP_RXF5SIDH	ps-spi-app.c	114;"	d	file:
+MCP_RXF5SIDL	CAN_Rx/mcp_can_dfs.h	127;"	d
+MCP_RXF5SIDL	CAN_Tx/mcp_can_dfs.h	127;"	d
+MCP_RXF5SIDL	ps-spi-app.c	115;"	d	file:
+MCP_RXM0EID0	CAN_Rx/mcp_can_dfs.h	135;"	d
+MCP_RXM0EID0	CAN_Tx/mcp_can_dfs.h	135;"	d
+MCP_RXM0EID0	ps-spi-app.c	123;"	d	file:
+MCP_RXM0EID8	CAN_Rx/mcp_can_dfs.h	134;"	d
+MCP_RXM0EID8	CAN_Tx/mcp_can_dfs.h	134;"	d
+MCP_RXM0EID8	ps-spi-app.c	122;"	d	file:
+MCP_RXM0SIDH	CAN_Rx/mcp_can_dfs.h	132;"	d
+MCP_RXM0SIDH	CAN_Tx/mcp_can_dfs.h	132;"	d
+MCP_RXM0SIDH	ps-spi-app.c	120;"	d	file:
+MCP_RXM0SIDL	CAN_Rx/mcp_can_dfs.h	133;"	d
+MCP_RXM0SIDL	CAN_Tx/mcp_can_dfs.h	133;"	d
+MCP_RXM0SIDL	ps-spi-app.c	121;"	d	file:
+MCP_RXM1EID0	CAN_Rx/mcp_can_dfs.h	139;"	d
+MCP_RXM1EID0	CAN_Tx/mcp_can_dfs.h	139;"	d
+MCP_RXM1EID0	ps-spi-app.c	127;"	d	file:
+MCP_RXM1EID8	CAN_Rx/mcp_can_dfs.h	138;"	d
+MCP_RXM1EID8	CAN_Tx/mcp_can_dfs.h	138;"	d
+MCP_RXM1EID8	ps-spi-app.c	126;"	d	file:
+MCP_RXM1SIDH	CAN_Rx/mcp_can_dfs.h	136;"	d
+MCP_RXM1SIDH	CAN_Tx/mcp_can_dfs.h	136;"	d
+MCP_RXM1SIDH	ps-spi-app.c	124;"	d	file:
+MCP_RXM1SIDL	CAN_Rx/mcp_can_dfs.h	137;"	d
+MCP_RXM1SIDL	CAN_Tx/mcp_can_dfs.h	137;"	d
+MCP_RXM1SIDL	ps-spi-app.c	125;"	d	file:
+MCP_RX_INT	CAN_Rx/mcp_can_dfs.h	157;"	d
+MCP_RX_INT	CAN_Tx/mcp_can_dfs.h	157;"	d
+MCP_RX_INT	ps-spi-app.c	144;"	d	file:
+MCP_RX_STATUS	CAN_Rx/mcp_can_dfs.h	186;"	d
+MCP_RX_STATUS	CAN_Tx/mcp_can_dfs.h	186;"	d
+MCP_RX_STATUS	ps-spi-app.c	158;"	d	file:
+MCP_SIDH	CAN_Rx/mcp_can_dfs.h	55;"	d
+MCP_SIDH	CAN_Tx/mcp_can_dfs.h	55;"	d
+MCP_SIDH	ps-spi-app.c	54;"	d	file:
+MCP_SIDL	CAN_Rx/mcp_can_dfs.h	56;"	d
+MCP_SIDL	CAN_Tx/mcp_can_dfs.h	56;"	d
+MCP_SIDL	ps-spi-app.c	55;"	d	file:
+MCP_SLEEP	CAN_Rx/mcp_can_dfs.h	195;"	d
+MCP_SLEEP	CAN_Tx/mcp_can_dfs.h	195;"	d
+MCP_SLEEP	ps-spi-app.c	66;"	d	file:
+MCP_STAT_RX0IF	CAN_Rx/mcp_can_dfs.h	87;"	d
+MCP_STAT_RX0IF	CAN_Tx/mcp_can_dfs.h	87;"	d
+MCP_STAT_RX1IF	CAN_Rx/mcp_can_dfs.h	88;"	d
+MCP_STAT_RX1IF	CAN_Tx/mcp_can_dfs.h	88;"	d
+MCP_STAT_RXIF_MASK	CAN_Rx/mcp_can_dfs.h	86;"	d
+MCP_STAT_RXIF_MASK	CAN_Tx/mcp_can_dfs.h	86;"	d
+MCP_STD	CAN_Rx/mcp_can_dfs.h	438;"	d
+MCP_STD	CAN_Tx/mcp_can_dfs.h	438;"	d
+MCP_STD	ps-spi-app.c	74;"	d	file:
+MCP_STDEXT	CAN_Rx/mcp_can_dfs.h	437;"	d
+MCP_STDEXT	CAN_Tx/mcp_can_dfs.h	437;"	d
+MCP_STDEXT	ps-spi-app.c	73;"	d	file:
+MCP_TEC	CAN_Rx/mcp_can_dfs.h	130;"	d
+MCP_TEC	CAN_Tx/mcp_can_dfs.h	130;"	d
+MCP_TEC	ps-spi-app.c	118;"	d	file:
+MCP_TX01_INT	CAN_Rx/mcp_can_dfs.h	156;"	d
+MCP_TX01_INT	CAN_Tx/mcp_can_dfs.h	156;"	d
+MCP_TX01_INT	ps-spi-app.c	143;"	d	file:
+MCP_TX01_MASK	CAN_Rx/mcp_can_dfs.h	160;"	d
+MCP_TX01_MASK	CAN_Tx/mcp_can_dfs.h	160;"	d
+MCP_TX01_MASK	ps-spi-app.c	146;"	d	file:
+MCP_TX0IF	CAN_Rx/mcp_can_dfs.h	242;"	d
+MCP_TX0IF	CAN_Tx/mcp_can_dfs.h	242;"	d
+MCP_TX1IF	CAN_Rx/mcp_can_dfs.h	243;"	d
+MCP_TX1IF	CAN_Tx/mcp_can_dfs.h	243;"	d
+MCP_TX2IF	CAN_Rx/mcp_can_dfs.h	244;"	d
+MCP_TX2IF	CAN_Tx/mcp_can_dfs.h	244;"	d
+MCP_TXB0CTRL	CAN_Rx/mcp_can_dfs.h	146;"	d
+MCP_TXB0CTRL	CAN_Tx/mcp_can_dfs.h	146;"	d
+MCP_TXB0CTRL	ps-spi-app.c	134;"	d	file:
+MCP_TXB1CTRL	CAN_Rx/mcp_can_dfs.h	147;"	d
+MCP_TXB1CTRL	CAN_Tx/mcp_can_dfs.h	147;"	d
+MCP_TXB1CTRL	ps-spi-app.c	135;"	d	file:
+MCP_TXB2CTRL	CAN_Rx/mcp_can_dfs.h	148;"	d
+MCP_TXB2CTRL	CAN_Tx/mcp_can_dfs.h	148;"	d
+MCP_TXB2CTRL	ps-spi-app.c	136;"	d	file:
+MCP_TXB_ABTF_M	CAN_Rx/mcp_can_dfs.h	75;"	d
+MCP_TXB_ABTF_M	CAN_Tx/mcp_can_dfs.h	75;"	d
+MCP_TXB_EXIDE_M	CAN_Rx/mcp_can_dfs.h	60;"	d
+MCP_TXB_EXIDE_M	CAN_Tx/mcp_can_dfs.h	60;"	d
+MCP_TXB_MLOA_M	CAN_Rx/mcp_can_dfs.h	76;"	d
+MCP_TXB_MLOA_M	CAN_Tx/mcp_can_dfs.h	76;"	d
+MCP_TXB_RTR_M	CAN_Rx/mcp_can_dfs.h	82;"	d
+MCP_TXB_RTR_M	CAN_Tx/mcp_can_dfs.h	82;"	d
+MCP_TXB_TXBUFE_M	CAN_Rx/mcp_can_dfs.h	74;"	d
+MCP_TXB_TXBUFE_M	CAN_Tx/mcp_can_dfs.h	74;"	d
+MCP_TXB_TXERR_M	CAN_Rx/mcp_can_dfs.h	77;"	d
+MCP_TXB_TXERR_M	CAN_Tx/mcp_can_dfs.h	77;"	d
+MCP_TXB_TXIE_M	CAN_Rx/mcp_can_dfs.h	79;"	d
+MCP_TXB_TXIE_M	CAN_Tx/mcp_can_dfs.h	79;"	d
+MCP_TXB_TXP10_M	CAN_Rx/mcp_can_dfs.h	80;"	d
+MCP_TXB_TXP10_M	CAN_Tx/mcp_can_dfs.h	80;"	d
+MCP_TXB_TXREQ_M	CAN_Rx/mcp_can_dfs.h	78;"	d
+MCP_TXB_TXREQ_M	CAN_Tx/mcp_can_dfs.h	78;"	d
+MCP_TXB_TXREQ_M	ps-spi-app.c	149;"	d	file:
+MCP_TX_INT	CAN_Rx/mcp_can_dfs.h	155;"	d
+MCP_TX_INT	CAN_Tx/mcp_can_dfs.h	155;"	d
+MCP_TX_INT	ps-spi-app.c	142;"	d	file:
+MCP_TX_MASK	CAN_Rx/mcp_can_dfs.h	161;"	d
+MCP_TX_MASK	CAN_Tx/mcp_can_dfs.h	161;"	d
+MCP_TX_MASK	ps-spi-app.c	147;"	d	file:
+MCP_WAKIF	CAN_Rx/mcp_can_dfs.h	246;"	d
+MCP_WAKIF	CAN_Tx/mcp_can_dfs.h	246;"	d
+MCP_WRITE	CAN_Rx/mcp_can_dfs.h	166;"	d
+MCP_WRITE	CAN_Tx/mcp_can_dfs.h	166;"	d
+MCP_WRITE	ps-spi-app.c	156;"	d	file:
+MODE_CONFIG	CAN_Rx/mcp_can_dfs.h	198;"	d
+MODE_CONFIG	CAN_Tx/mcp_can_dfs.h	198;"	d
+MODE_MASK	CAN_Rx/mcp_can_dfs.h	200;"	d
+MODE_MASK	CAN_Tx/mcp_can_dfs.h	200;"	d
+MODE_MASK	ps-spi-app.c	71;"	d	file:
+MODE_ONESHOT	CAN_Rx/mcp_can_dfs.h	202;"	d
+MODE_ONESHOT	CAN_Tx/mcp_can_dfs.h	202;"	d
+MODE_POWERUP	CAN_Rx/mcp_can_dfs.h	199;"	d
+MODE_POWERUP	CAN_Tx/mcp_can_dfs.h	199;"	d
+PIN_AIN1	CAN_Rx/hardware.h	67;"	d
+PIN_AIN1	CAN_Tx/hardware.h	67;"	d
+PIN_AIN2	CAN_Rx/hardware.h	68;"	d
+PIN_AIN2	CAN_Tx/hardware.h	68;"	d
+PIN_ANODE0	CAN_Rx/hardware.h	85;"	d
+PIN_ANODE0	CAN_Tx/hardware.h	85;"	d
+PIN_ANODE1	CAN_Rx/hardware.h	86;"	d
+PIN_ANODE1	CAN_Tx/hardware.h	86;"	d
+PIN_ANODE2	CAN_Rx/hardware.h	87;"	d
+PIN_ANODE2	CAN_Tx/hardware.h	87;"	d
+PIN_ANODE3	CAN_Rx/hardware.h	88;"	d
+PIN_ANODE3	CAN_Tx/hardware.h	88;"	d
+PIN_BIN1	CAN_Rx/hardware.h	69;"	d
+PIN_BIN1	CAN_Tx/hardware.h	69;"	d
+PIN_BIN2	CAN_Rx/hardware.h	70;"	d
+PIN_BIN2	CAN_Tx/hardware.h	70;"	d
+PIN_CA	CAN_Rx/hardware.h	77;"	d
+PIN_CA	CAN_Tx/hardware.h	77;"	d
+PIN_CB	CAN_Rx/hardware.h	78;"	d
+PIN_CB	CAN_Tx/hardware.h	78;"	d
+PIN_CC	CAN_Rx/hardware.h	79;"	d
+PIN_CC	CAN_Tx/hardware.h	79;"	d
+PIN_CD	CAN_Rx/hardware.h	80;"	d
+PIN_CD	CAN_Tx/hardware.h	80;"	d
+PIN_CE	CAN_Rx/hardware.h	81;"	d
+PIN_CE	CAN_Tx/hardware.h	81;"	d
+PIN_CF	CAN_Rx/hardware.h	82;"	d
+PIN_CF	CAN_Tx/hardware.h	82;"	d
+PIN_CG	CAN_Rx/hardware.h	83;"	d
+PIN_CG	CAN_Tx/hardware.h	83;"	d
+PIN_DISP_EN	CAN_Rx/LCDBBlib.h	56;"	d
+PIN_DISP_EN	CAN_Tx/LCDBBlib.h	56;"	d
+PIN_DISP_RS	CAN_Rx/LCDBBlib.h	55;"	d
+PIN_DISP_RS	CAN_Tx/LCDBBlib.h	55;"	d
+PIN_DISP_RW	CAN_Rx/LCDBBlib.h	54;"	d
+PIN_DISP_RW	CAN_Tx/LCDBBlib.h	54;"	d
+PIN_DP	CAN_Rx/hardware.h	84;"	d
+PIN_DP	CAN_Tx/hardware.h	84;"	d
+PIN_IRDA_PWR	CAN_Rx/hardware.h	61;"	d
+PIN_IRDA_PWR	CAN_Tx/hardware.h	61;"	d
+PIN_IRDA_RX	CAN_Rx/hardware.h	59;"	d
+PIN_IRDA_RX	CAN_Tx/hardware.h	59;"	d
+PIN_IRDA_TX	CAN_Rx/hardware.h	60;"	d
+PIN_IRDA_TX	CAN_Tx/hardware.h	60;"	d
+PIN_LCD_DB0	CAN_Rx/LCDBBlib.h	57;"	d
+PIN_LCD_DB0	CAN_Tx/LCDBBlib.h	57;"	d
+PIN_LCD_DB1	CAN_Rx/LCDBBlib.h	58;"	d
+PIN_LCD_DB1	CAN_Tx/LCDBBlib.h	58;"	d
+PIN_LCD_DB2	CAN_Rx/LCDBBlib.h	59;"	d
+PIN_LCD_DB2	CAN_Tx/LCDBBlib.h	59;"	d
+PIN_LCD_DB3	CAN_Rx/LCDBBlib.h	60;"	d
+PIN_LCD_DB3	CAN_Tx/LCDBBlib.h	60;"	d
+PIN_LCD_DB4	CAN_Rx/LCDBBlib.h	61;"	d
+PIN_LCD_DB4	CAN_Tx/LCDBBlib.h	61;"	d
+PIN_LCD_DB5	CAN_Rx/LCDBBlib.h	62;"	d
+PIN_LCD_DB5	CAN_Tx/LCDBBlib.h	62;"	d
+PIN_LCD_DB6	CAN_Rx/LCDBBlib.h	63;"	d
+PIN_LCD_DB6	CAN_Tx/LCDBBlib.h	63;"	d
+PIN_LCD_DB7	CAN_Rx/LCDBBlib.h	64;"	d
+PIN_LCD_DB7	CAN_Tx/LCDBBlib.h	64;"	d
+PIN_MOTOR_MODE	CAN_Rx/hardware.h	71;"	d
+PIN_MOTOR_MODE	CAN_Tx/hardware.h	71;"	d
+PeriodMs	CAN_Rx/swDelay.cpp	/^int PeriodMs(unsigned int msec)$/;"	f
+PeriodMs	CAN_Tx/swDelay.cpp	/^int PeriodMs(unsigned int msec)$/;"	f
+SAMPLE_1X	CAN_Rx/mcp_can_dfs.h	224;"	d
+SAMPLE_1X	CAN_Tx/mcp_can_dfs.h	224;"	d
+SAMPLE_3X	CAN_Rx/mcp_can_dfs.h	225;"	d
+SAMPLE_3X	CAN_Tx/mcp_can_dfs.h	225;"	d
+SEG_CA	CAN_Rx/led7.h	76;"	d
+SEG_CA	CAN_Tx/led7.h	76;"	d
+SEG_CB	CAN_Rx/led7.h	77;"	d
+SEG_CB	CAN_Tx/led7.h	77;"	d
+SEG_CC	CAN_Rx/led7.h	78;"	d
+SEG_CC	CAN_Tx/led7.h	78;"	d
+SEG_CD	CAN_Rx/led7.h	79;"	d
+SEG_CD	CAN_Tx/led7.h	79;"	d
+SEG_CE	CAN_Rx/led7.h	80;"	d
+SEG_CE	CAN_Tx/led7.h	80;"	d
+SEG_CF	CAN_Rx/led7.h	81;"	d
+SEG_CF	CAN_Tx/led7.h	81;"	d
+SEG_CG	CAN_Rx/led7.h	82;"	d
+SEG_CG	CAN_Tx/led7.h	82;"	d
+SEG_DP	CAN_Rx/led7.h	83;"	d
+SEG_DP	CAN_Tx/led7.h	83;"	d
+SEG_LED0	CAN_Rx/led7.h	90;"	d
+SEG_LED0	CAN_Tx/led7.h	90;"	d
+SEG_LED1	CAN_Rx/led7.h	91;"	d
+SEG_LED1	CAN_Tx/led7.h	91;"	d
+SEG_LED2	CAN_Rx/led7.h	92;"	d
+SEG_LED2	CAN_Tx/led7.h	92;"	d
+SEG_LED3	CAN_Rx/led7.h	93;"	d
+SEG_LED3	CAN_Tx/led7.h	93;"	d
+SEG_LED4	CAN_Rx/led7.h	94;"	d
+SEG_LED4	CAN_Tx/led7.h	94;"	d
+SEG_LED5	CAN_Rx/led7.h	95;"	d
+SEG_LED5	CAN_Tx/led7.h	95;"	d
+SEG_LED6	CAN_Rx/led7.h	96;"	d
+SEG_LED6	CAN_Tx/led7.h	96;"	d
+SEG_LED7	CAN_Rx/led7.h	97;"	d
+SEG_LED7	CAN_Tx/led7.h	97;"	d
+SEG_LED8	CAN_Rx/led7.h	98;"	d
+SEG_LED8	CAN_Tx/led7.h	98;"	d
+SEG_LED9	CAN_Rx/led7.h	99;"	d
+SEG_LED9	CAN_Tx/led7.h	99;"	d
+SEG_NEG	CAN_Rx/led7.h	100;"	d
+SEG_NEG	CAN_Tx/led7.h	100;"	d
+SEG_OFF	CAN_Rx/led7.h	101;"	d
+SEG_OFF	CAN_Tx/led7.h	101;"	d
+SET_DP	CAN_Rx/led7.h	104;"	d
+SET_DP	CAN_Tx/led7.h	104;"	d
+SJW1	CAN_Rx/mcp_can_dfs.h	214;"	d
+SJW1	CAN_Tx/mcp_can_dfs.h	214;"	d
+SJW2	CAN_Rx/mcp_can_dfs.h	215;"	d
+SJW2	CAN_Tx/mcp_can_dfs.h	215;"	d
+SJW3	CAN_Rx/mcp_can_dfs.h	216;"	d
+SJW3	CAN_Tx/mcp_can_dfs.h	216;"	d
+SJW4	CAN_Rx/mcp_can_dfs.h	217;"	d
+SJW4	CAN_Tx/mcp_can_dfs.h	217;"	d
+SOF_DISABLE	CAN_Rx/mcp_can_dfs.h	232;"	d
+SOF_DISABLE	CAN_Tx/mcp_can_dfs.h	232;"	d
+SOF_ENABLE	CAN_Rx/mcp_can_dfs.h	231;"	d
+SOF_ENABLE	CAN_Tx/mcp_can_dfs.h	231;"	d
+SPIJA_Close	CAN_Rx/spija.cpp	/^void SPIJA_Close()$/;"	f
+SPIJA_Close	CAN_Tx/spija.cpp	/^void SPIJA_Close()$/;"	f
+SPIJA_ConfigurePins	CAN_Rx/spija.cpp	/^void SPIJA_ConfigurePins()$/;"	f
+SPIJA_ConfigurePins	CAN_Tx/spija.cpp	/^void SPIJA_ConfigurePins()$/;"	f
+SPIJA_ConfigureSPI	CAN_Rx/spija.cpp	/^void SPIJA_ConfigureSPI(unsigned int spiFreq, unsigned char pol, unsigned char edge)$/;"	f
+SPIJA_ConfigureSPI	CAN_Tx/spija.cpp	/^void SPIJA_ConfigureSPI(unsigned int spiFreq, unsigned char pol, unsigned char edge)$/;"	f
+SPIJA_Init	CAN_Rx/spija.cpp	/^void SPIJA_Init()$/;"	f
+SPIJA_Init	CAN_Tx/spija.cpp	/^void SPIJA_Init()$/;"	f
+SPIJA_RawTransferByte	CAN_Rx/spija.cpp	/^unsigned char SPIJA_RawTransferByte(unsigned char bVal)$/;"	f
+SPIJA_RawTransferByte	CAN_Tx/spija.cpp	/^unsigned char SPIJA_RawTransferByte(unsigned char bVal)$/;"	f
+SPIJA_TransferBytes	CAN_Rx/spija.cpp	/^void SPIJA_TransferBytes(int bytesNumber, unsigned char *pbRdData, unsigned char *pbWrData)$/;"	f
+SPIJA_TransferBytes	CAN_Tx/spija.cpp	/^void SPIJA_TransferBytes(int bytesNumber, unsigned char *pbRdData, unsigned char *pbWrData)$/;"	f
+SPI_DEV	ps-spi-app.c	46;"	d	file:
+SYSTEM_FREQ	CAN_Rx/hardware.h	111;"	d
+SYSTEM_FREQ	CAN_Tx/hardware.h	111;"	d
+Seg7cfg	CAN_Rx/led7.h	71;"	d
+Seg7cfg	CAN_Tx/led7.h	71;"	d
+SetLCDInput	CAN_Rx/LCDBBlib.h	75;"	d
+SetLCDInput	CAN_Tx/LCDBBlib.h	75;"	d
+SetLCDOutput	CAN_Rx/LCDBBlib.h	66;"	d
+SetLCDOutput	CAN_Tx/LCDBBlib.h	66;"	d
+SevenSegLED	CAN_Rx/led7.cpp	/^uint32_t SevenSegLED(uint32_t segDelay) $/;"	f
+SevenSegLED	CAN_Tx/led7.cpp	/^uint32_t SevenSegLED(uint32_t segDelay) $/;"	f
+Switch2Binary	CAN_Rx/hardware.h	90;"	d
+Switch2Binary	CAN_Tx/hardware.h	90;"	d
+T1_TICK	CAN_Rx/led7.h	105;"	d
+T1_TICK	CAN_Tx/led7.h	105;"	d
+TIMEOUTVALUE	CAN_Rx/mcp_can_dfs.h	54;"	d
+TIMEOUTVALUE	CAN_Tx/mcp_can_dfs.h	54;"	d
+TIMEOUTVALUE	ps-spi-app.c	52;"	d	file:
+TRUE	CAN_Rx/hardware.h	31;"	d
+TRUE	CAN_Rx/swDelay.cpp	101;"	d	file:
+TRUE	CAN_Tx/hardware.h	31;"	d
+TRUE	CAN_Tx/swDelay.cpp	101;"	d	file:
+VLCD	CAN_Rx/LCDBBlib.h	33;"	d
+VLCD	CAN_Tx/LCDBBlib.h	33;"	d
+WAKFIL_DISABLE	CAN_Rx/mcp_can_dfs.h	234;"	d
+WAKFIL_DISABLE	CAN_Tx/mcp_can_dfs.h	234;"	d
+WAKFIL_ENABLE	CAN_Rx/mcp_can_dfs.h	233;"	d
+WAKFIL_ENABLE	CAN_Tx/mcp_can_dfs.h	233;"	d
+XTAL	CAN_Rx/hardware.h	109;"	d
+XTAL	CAN_Tx/hardware.h	109;"	d
+_HARDWARE_H_	CAN_Rx/hardware.h	39;"	d
+_HARDWARE_H_	CAN_Tx/hardware.h	39;"	d
+_LED7_H_	CAN_Rx/led7.h	32;"	d
+_LED7_H_	CAN_Tx/led7.h	32;"	d
+_MCP25615_H_	CAN_Rx/MCP_CAN.h	34;"	d
+_MCP25615_H_	CAN_Tx/MCP_CAN.h	34;"	d
+_MCP25625DFS_H_	CAN_Rx/mcp_can_dfs.h	35;"	d
+_MCP25625DFS_H_	CAN_Tx/mcp_can_dfs.h	35;"	d
+_SPI_MISO_PIN	CAN_Rx/spija.h	25;"	d
+_SPI_MISO_PIN	CAN_Tx/spija.h	25;"	d
+_SPI_MOSI_PIN	CAN_Rx/spija.h	24;"	d
+_SPI_MOSI_PIN	CAN_Tx/spija.h	24;"	d
+_SPI_SCK_PIN	CAN_Rx/spija.h	26;"	d
+_SPI_SCK_PIN	CAN_Tx/spija.h	26;"	d
+_SPI_SS_PIN	CAN_Rx/spija.h	23;"	d
+_SPI_SS_PIN	CAN_Tx/spija.h	23;"	d
+_SW_DELAY_H	CAN_Rx/swDelay.h	35;"	d
+_SW_DELAY_H	CAN_Tx/swDelay.h	35;"	d
+__LCDBBLIB_H__	CAN_Rx/LCDBBlib.h	25;"	d
+__LCDBBLIB_H__	CAN_Tx/LCDBBlib.h	25;"	d
+__canMsg	ps-spi-app.c	/^typedef struct __canMsg$/;"	s	file:
+begin	CAN_Rx/MCP_CAN.cpp	/^INT8U MCP_CAN::begin(INT8U idmodeset, INT8U speedset, INT8U clockset)$/;"	f	class:MCP_CAN
+begin	CAN_Tx/MCP_CAN.cpp	/^INT8U MCP_CAN::begin(INT8U idmodeset, INT8U speedset, INT8U clockset)$/;"	f	class:MCP_CAN
+canDATA	ps-spi-app.c	/^	uint8_t		canDATA[8];$/;"	m	struct:__canMsg	file:
+canDLC	ps-spi-app.c	/^	uint8_t		canDLC;$/;"	m	struct:__canMsg	file:
+canEID	ps-spi-app.c	/^	uint32_t	canEID;$/;"	m	struct:__canMsg	file:
+canID	ps-spi-app.c	/^	uint16_t	canID;$/;"	m	struct:__canMsg	file:
+canIDE	ps-spi-app.c	/^	uint8_t		canIDE;$/;"	m	struct:__canMsg	file:
+canMsg	ps-spi-app.c	/^}canMsg;$/;"	t	typeref:struct:__canMsg	file:
+canRTR	ps-spi-app.c	/^	uint8_t		canRTR;$/;"	m	struct:__canMsg	file:
+canSRR	ps-spi-app.c	/^	uint8_t		canSRR;$/;"	m	struct:__canMsg	file:
+checkError	CAN_Rx/MCP_CAN.cpp	/^INT8U MCP_CAN::checkError(void)$/;"	f	class:MCP_CAN
+checkError	CAN_Tx/MCP_CAN.cpp	/^INT8U MCP_CAN::checkError(void)$/;"	f	class:MCP_CAN
+checkReceive	CAN_Rx/MCP_CAN.cpp	/^INT8U MCP_CAN::checkReceive(void)$/;"	f	class:MCP_CAN
+checkReceive	CAN_Tx/MCP_CAN.cpp	/^INT8U MCP_CAN::checkReceive(void)$/;"	f	class:MCP_CAN
+clearMsg	CAN_Rx/MCP_CAN.cpp	/^INT8U MCP_CAN::clearMsg()$/;"	f	class:MCP_CAN
+clearMsg	CAN_Tx/MCP_CAN.cpp	/^INT8U MCP_CAN::clearMsg()$/;"	f	class:MCP_CAN
+clr_dsp	CAN_Rx/led7.cpp	/^void clr_dsp(void)$/;"	f
+clr_dsp	CAN_Tx/led7.cpp	/^void clr_dsp(void)$/;"	f
+disOneShotTX	CAN_Rx/MCP_CAN.cpp	/^INT8U MCP_CAN::disOneShotTX(void)                             $/;"	f	class:MCP_CAN
+disOneShotTX	CAN_Tx/MCP_CAN.cpp	/^INT8U MCP_CAN::disOneShotTX(void)                             $/;"	f	class:MCP_CAN
+do_msg	ps-spi-app.c	/^static void do_msg(int fd, unsigned char * buf, int len)$/;"	f	file:
+do_read	ps-spi-app.c	/^static void do_read(int fd, int len)$/;"	f	file:
+dsp_digit	CAN_Rx/led7.cpp	/^void dsp_digit(int value, int dp)$/;"	f
+dsp_digit	CAN_Tx/led7.cpp	/^void dsp_digit(int value, int dp)$/;"	f
+dumpstat	ps-spi-app.c	/^static void dumpstat(const char *name, int fd)$/;"	f	file:
+enOneShotTX	CAN_Rx/MCP_CAN.cpp	/^INT8U MCP_CAN::enOneShotTX(void)                             $/;"	f	class:MCP_CAN
+enOneShotTX	CAN_Tx/MCP_CAN.cpp	/^INT8U MCP_CAN::enOneShotTX(void)                             $/;"	f	class:MCP_CAN
+errorCountRX	CAN_Rx/MCP_CAN.cpp	/^INT8U MCP_CAN::errorCountRX(void)                             $/;"	f	class:MCP_CAN
+errorCountRX	CAN_Tx/MCP_CAN.cpp	/^INT8U MCP_CAN::errorCountRX(void)                             $/;"	f	class:MCP_CAN
+errorCountTX	CAN_Rx/MCP_CAN.cpp	/^INT8U MCP_CAN::errorCountTX(void)                             $/;"	f	class:MCP_CAN
+errorCountTX	CAN_Tx/MCP_CAN.cpp	/^INT8U MCP_CAN::errorCountTX(void)                             $/;"	f	class:MCP_CAN
+getError	CAN_Rx/MCP_CAN.cpp	/^INT8U MCP_CAN::getError(void)$/;"	f	class:MCP_CAN
+getError	CAN_Tx/MCP_CAN.cpp	/^INT8U MCP_CAN::getError(void)$/;"	f	class:MCP_CAN
+init_Filt	CAN_Rx/MCP_CAN.cpp	/^INT8U MCP_CAN::init_Filt(INT8U num, INT32U ulData)$/;"	f	class:MCP_CAN
+init_Filt	CAN_Rx/MCP_CAN.cpp	/^INT8U MCP_CAN::init_Filt(INT8U num, INT8U ext, INT32U ulData)$/;"	f	class:MCP_CAN
+init_Filt	CAN_Tx/MCP_CAN.cpp	/^INT8U MCP_CAN::init_Filt(INT8U num, INT32U ulData)$/;"	f	class:MCP_CAN
+init_Filt	CAN_Tx/MCP_CAN.cpp	/^INT8U MCP_CAN::init_Filt(INT8U num, INT8U ext, INT32U ulData)$/;"	f	class:MCP_CAN
+init_Mask	CAN_Rx/MCP_CAN.cpp	/^INT8U MCP_CAN::init_Mask(INT8U num, INT32U ulData)$/;"	f	class:MCP_CAN
+init_Mask	CAN_Rx/MCP_CAN.cpp	/^INT8U MCP_CAN::init_Mask(INT8U num, INT8U ext, INT32U ulData)$/;"	f	class:MCP_CAN
+init_Mask	CAN_Tx/MCP_CAN.cpp	/^INT8U MCP_CAN::init_Mask(INT8U num, INT32U ulData)$/;"	f	class:MCP_CAN
+init_Mask	CAN_Tx/MCP_CAN.cpp	/^INT8U MCP_CAN::init_Mask(INT8U num, INT8U ext, INT32U ulData)$/;"	f	class:MCP_CAN
+lcdAddr	CAN_Rx/LCDBBlib.h	112;"	d
+lcdAddr	CAN_Tx/LCDBBlib.h	112;"	d
+lcdBusy	CAN_Rx/LCDBBlib.h	108;"	d
+lcdBusy	CAN_Tx/LCDBBlib.h	108;"	d
+lcdClr	CAN_Rx/LCDBBlib.h	121;"	d
+lcdClr	CAN_Tx/LCDBBlib.h	121;"	d
+lcdCmd	CAN_Rx/LCDBBlib.h	118;"	d
+lcdCmd	CAN_Tx/LCDBBlib.h	118;"	d
+lcdGet	CAN_Rx/LCDBBlib.h	114;"	d
+lcdGet	CAN_Tx/LCDBBlib.h	114;"	d
+lcdGoto	CAN_Rx/LCDBBlib.h	126;"	d
+lcdGoto	CAN_Tx/LCDBBlib.h	126;"	d
+lcdHome	CAN_Rx/LCDBBlib.h	123;"	d
+lcdHome	CAN_Tx/LCDBBlib.h	123;"	d
+lcdInit	CAN_Rx/LCDBBlib.cpp	/^void lcdInit( void)$/;"	f
+lcdInit	CAN_Tx/LCDBBlib.cpp	/^void lcdInit( void)$/;"	f
+lcdPutc	CAN_Rx/LCDBBlib.cpp	/^void lcdPutc( int rs, char c)    $/;"	f
+lcdPutc	CAN_Tx/LCDBBlib.cpp	/^void lcdPutc( int rs, char c)    $/;"	f
+lcdPuts	CAN_Rx/LCDBBlib.cpp	/^void lcdPuts( char *s)$/;"	f
+lcdPuts	CAN_Tx/LCDBBlib.cpp	/^void lcdPuts( char *s)$/;"	f
+lcdRSpin	CAN_Rx/LCDBBlib.h	27;"	d
+lcdRSpin	CAN_Tx/LCDBBlib.h	27;"	d
+lcdRead	CAN_Rx/LCDBBlib.cpp	/^char lcdRead( int rs)$/;"	f
+lcdRead	CAN_Tx/LCDBBlib.cpp	/^char lcdRead( int rs)$/;"	f
+lcdSetC	CAN_Rx/LCDBBlib.h	131;"	d
+lcdSetC	CAN_Tx/LCDBBlib.h	131;"	d
+lcdSetG	CAN_Rx/LCDBBlib.h	129;"	d
+lcdSetG	CAN_Tx/LCDBBlib.h	129;"	d
+lcdWait	CAN_Rx/LCDBBlib.h	110;"	d
+lcdWait	CAN_Tx/LCDBBlib.h	110;"	d
+lcdWrite	CAN_Rx/LCDBBlib.cpp	/^void lcdWrite(int rs,  char c)    $/;"	f
+lcdWrite	CAN_Tx/LCDBBlib.cpp	/^void lcdWrite(int rs,  char c)    $/;"	f
+led_flag	CAN_Rx/led7.cpp	/^volatile int16_t led_flag = 0;$/;"	v
+led_flag	CAN_Tx/led7.cpp	/^volatile int16_t led_flag = 0;$/;"	v
+led_number	CAN_Rx/led7.cpp	/^void led_number(int value)$/;"	f
+led_number	CAN_Tx/led7.cpp	/^void led_number(int value)$/;"	f
+led_value	CAN_Rx/led7.cpp	/^volatile int16_t led_value = 0;$/;"	v
+led_value	CAN_Tx/led7.cpp	/^volatile int16_t led_value = 0;$/;"	v
+m_nDlc	CAN_Rx/MCP_CAN.h	/^    INT8U   m_nDlc;                        \/\/ Data Length Code$/;"	m	class:MCP_CAN
+m_nDlc	CAN_Tx/MCP_CAN.h	/^    INT8U   m_nDlc;                        \/\/ Data Length Code$/;"	m	class:MCP_CAN
+m_nDta	CAN_Rx/MCP_CAN.h	/^    INT8U   m_nDta[MAX_CHAR_IN_MESSAGE];   \/\/ Data array$/;"	m	class:MCP_CAN
+m_nDta	CAN_Tx/MCP_CAN.h	/^    INT8U   m_nDta[MAX_CHAR_IN_MESSAGE];   \/\/ Data array$/;"	m	class:MCP_CAN
+m_nExtFlg	CAN_Rx/MCP_CAN.h	/^    INT8U   m_nExtFlg;                     \/\/ Identifier Type$/;"	m	class:MCP_CAN
+m_nExtFlg	CAN_Tx/MCP_CAN.h	/^    INT8U   m_nExtFlg;                     \/\/ Identifier Type$/;"	m	class:MCP_CAN
+m_nID	CAN_Rx/MCP_CAN.h	/^    INT32U  m_nID;                         \/\/ CAN ID$/;"	m	class:MCP_CAN
+m_nID	CAN_Tx/MCP_CAN.h	/^    INT32U  m_nID;                         \/\/ CAN ID$/;"	m	class:MCP_CAN
+m_nRtr	CAN_Rx/MCP_CAN.h	/^    INT8U   m_nRtr;                        \/\/ Remote request flag$/;"	m	class:MCP_CAN
+m_nRtr	CAN_Tx/MCP_CAN.h	/^    INT8U   m_nRtr;                        \/\/ Remote request flag$/;"	m	class:MCP_CAN
+m_nfilhit	CAN_Rx/MCP_CAN.h	/^    INT8U   m_nfilhit;                     \/\/ The number of the filter that matched the message$/;"	m	class:MCP_CAN
+m_nfilhit	CAN_Tx/MCP_CAN.h	/^    INT8U   m_nfilhit;                     \/\/ The number of the filter that matched the message$/;"	m	class:MCP_CAN
+main	ps-spi-app.c	/^int main(int argc, char **argv)$/;"	f
+mcp25625_FAIL	CAN_Rx/mcp_can_dfs.h	415;"	d
+mcp25625_FAIL	CAN_Tx/mcp_can_dfs.h	415;"	d
+mcp25625_FAIL	ps-spi-app.c	48;"	d	file:
+mcp25625_OK	CAN_Rx/mcp_can_dfs.h	414;"	d
+mcp25625_OK	CAN_Tx/mcp_can_dfs.h	414;"	d
+mcp25625_SUCCESS	ps-spi-app.c	49;"	d	file:
+mcp25625_configRate	CAN_Rx/MCP_CAN.cpp	/^INT8U MCP_CAN::mcp25625_configRate(const INT8U canSpeed, const INT8U canClock)            $/;"	f	class:MCP_CAN
+mcp25625_configRate	CAN_Tx/MCP_CAN.cpp	/^INT8U MCP_CAN::mcp25625_configRate(const INT8U canSpeed, const INT8U canClock)            $/;"	f	class:MCP_CAN
+mcp25625_configRate	ps-spi-app.c	/^bool mcp25625_configRate(int fd, const uint8_t canSpeed, const uint8_t canClock)$/;"	f
+mcp25625_getNextFreeTXBuf	CAN_Rx/MCP_CAN.cpp	/^INT8U MCP_CAN::mcp25625_getNextFreeTXBuf(INT8U *txbuf_n)                 \/* get Next free txbuf          *\/$/;"	f	class:MCP_CAN
+mcp25625_getNextFreeTXBuf	CAN_Tx/MCP_CAN.cpp	/^INT8U MCP_CAN::mcp25625_getNextFreeTXBuf(INT8U *txbuf_n)                 \/* get Next free txbuf          *\/$/;"	f	class:MCP_CAN
+mcp25625_getNextFreeTXBuf	ps-spi-app.c	/^uint8_t mcp25625_getNextFreeTXBuf(int fd, uint8_t *txbuf)$/;"	f
+mcp25625_init	CAN_Rx/MCP_CAN.cpp	/^INT8U MCP_CAN::mcp25625_init(const INT8U canIDMode, const INT8U canSpeed, const INT8U canClock)$/;"	f	class:MCP_CAN
+mcp25625_init	CAN_Tx/MCP_CAN.cpp	/^INT8U MCP_CAN::mcp25625_init(const INT8U canIDMode, const INT8U canSpeed, const INT8U canClock)$/;"	f	class:MCP_CAN
+mcp25625_init	ps-spi-app.c	/^bool mcp25625_init(int fd, const uint8_t canIDMode, const uint8_t canSpeed, const uint8_t canClock)$/;"	f
+mcp25625_initCANBuffers	CAN_Rx/MCP_CAN.cpp	/^void MCP_CAN::mcp25625_initCANBuffers(void)$/;"	f	class:MCP_CAN
+mcp25625_initCANBuffers	CAN_Tx/MCP_CAN.cpp	/^void MCP_CAN::mcp25625_initCANBuffers(void)$/;"	f	class:MCP_CAN
+mcp25625_initCANBuffers	ps-spi-app.c	/^void mcp25625_initCANBuffers(int fd)$/;"	f
+mcp25625_modifyRegister	CAN_Rx/MCP_CAN.cpp	/^void MCP_CAN::mcp25625_modifyRegister(const INT8U address, const INT8U mask, const INT8U data)$/;"	f	class:MCP_CAN
+mcp25625_modifyRegister	CAN_Tx/MCP_CAN.cpp	/^void MCP_CAN::mcp25625_modifyRegister(const INT8U address, const INT8U mask, const INT8U data)$/;"	f	class:MCP_CAN
+mcp25625_modifyRegister	ps-spi-app.c	/^void mcp25625_modifyRegister(int fd, const uint8_t address, const uint8_t mask, const uint8_t data)$/;"	f
+mcp25625_readRegister	CAN_Rx/MCP_CAN.cpp	/^INT8U MCP_CAN::mcp25625_readRegister(const INT8U address)                                                                     $/;"	f	class:MCP_CAN
+mcp25625_readRegister	CAN_Tx/MCP_CAN.cpp	/^INT8U MCP_CAN::mcp25625_readRegister(const INT8U address)                                                                     $/;"	f	class:MCP_CAN
+mcp25625_readRegister	ps-spi-app.c	/^uint8_t mcp25625_readRegister(int fd, const uint8_t address)$/;"	f
+mcp25625_readRegisterS	CAN_Rx/MCP_CAN.cpp	/^void MCP_CAN::mcp25625_readRegisterS(const INT8U address, INT8U values[], const INT8U n)$/;"	f	class:MCP_CAN
+mcp25625_readRegisterS	CAN_Tx/MCP_CAN.cpp	/^void MCP_CAN::mcp25625_readRegisterS(const INT8U address, INT8U values[], const INT8U n)$/;"	f	class:MCP_CAN
+mcp25625_readStatus	CAN_Rx/MCP_CAN.cpp	/^INT8U MCP_CAN::mcp25625_readStatus(void)                             $/;"	f	class:MCP_CAN
+mcp25625_readStatus	CAN_Tx/MCP_CAN.cpp	/^INT8U MCP_CAN::mcp25625_readStatus(void)                             $/;"	f	class:MCP_CAN
+mcp25625_read_canMsg	CAN_Rx/MCP_CAN.cpp	/^void MCP_CAN::mcp25625_read_canMsg( const INT8U buffer_sidh_addr)        \/* read can msg                 *\/$/;"	f	class:MCP_CAN
+mcp25625_read_canMsg	CAN_Tx/MCP_CAN.cpp	/^void MCP_CAN::mcp25625_read_canMsg( const INT8U buffer_sidh_addr)        \/* read can msg                 *\/$/;"	f	class:MCP_CAN
+mcp25625_read_id	CAN_Rx/MCP_CAN.cpp	/^void MCP_CAN::mcp25625_read_id( const INT8U mcp_addr, INT8U* ext, INT32U* id )$/;"	f	class:MCP_CAN
+mcp25625_read_id	CAN_Tx/MCP_CAN.cpp	/^void MCP_CAN::mcp25625_read_id( const INT8U mcp_addr, INT8U* ext, INT32U* id )$/;"	f	class:MCP_CAN
+mcp25625_reset	CAN_Rx/MCP_CAN.cpp	/^void MCP_CAN::mcp25625_reset(void)                                      $/;"	f	class:MCP_CAN
+mcp25625_reset	CAN_Tx/MCP_CAN.cpp	/^void MCP_CAN::mcp25625_reset(void)                                      $/;"	f	class:MCP_CAN
+mcp25625_reset	ps-spi-app.c	/^void mcp25625_reset(int fd)$/;"	f
+mcp25625_setCANCTRL_Mode	CAN_Rx/MCP_CAN.cpp	/^INT8U MCP_CAN::mcp25625_setCANCTRL_Mode(const INT8U newmode)$/;"	f	class:MCP_CAN
+mcp25625_setCANCTRL_Mode	CAN_Tx/MCP_CAN.cpp	/^INT8U MCP_CAN::mcp25625_setCANCTRL_Mode(const INT8U newmode)$/;"	f	class:MCP_CAN
+mcp25625_setCANCTRL_Mode	ps-spi-app.c	/^bool mcp25625_setCANCTRL_Mode(int fd, uint8_t mcpMode)$/;"	f
+mcp25625_setRegister	CAN_Rx/MCP_CAN.cpp	/^void MCP_CAN::mcp25625_setRegister(const INT8U address, const INT8U value)$/;"	f	class:MCP_CAN
+mcp25625_setRegister	CAN_Tx/MCP_CAN.cpp	/^void MCP_CAN::mcp25625_setRegister(const INT8U address, const INT8U value)$/;"	f	class:MCP_CAN
+mcp25625_setRegister	ps-spi-app.c	/^void mcp25625_setRegister(int fd, const uint8_t address, const uint8_t value)$/;"	f
+mcp25625_setRegisterS	CAN_Rx/MCP_CAN.cpp	/^void MCP_CAN::mcp25625_setRegisterS(const INT8U address, const INT8U values[], const INT8U n)$/;"	f	class:MCP_CAN
+mcp25625_setRegisterS	CAN_Tx/MCP_CAN.cpp	/^void MCP_CAN::mcp25625_setRegisterS(const INT8U address, const INT8U values[], const INT8U n)$/;"	f	class:MCP_CAN
+mcp25625_write_canMsg	CAN_Rx/MCP_CAN.cpp	/^void MCP_CAN::mcp25625_write_canMsg( const INT8U buffer_sidh_addr)$/;"	f	class:MCP_CAN
+mcp25625_write_canMsg	CAN_Tx/MCP_CAN.cpp	/^void MCP_CAN::mcp25625_write_canMsg( const INT8U buffer_sidh_addr)$/;"	f	class:MCP_CAN
+mcp25625_write_canMsg	ps-spi-app.c	/^void mcp25625_write_canMsg(int fd, const uint8_t buffer_sidh_addr)$/;"	f
+mcp25625_write_data	ps-spi-app.c	/^void mcp25625_write_data(int fd, const uint8_t mcp_addr)$/;"	f
+mcp25625_write_id	CAN_Rx/MCP_CAN.cpp	/^void MCP_CAN::mcp25625_write_id( const INT8U mcp_addr, const INT8U ext, const INT32U id )$/;"	f	class:MCP_CAN
+mcp25625_write_id	CAN_Tx/MCP_CAN.cpp	/^void MCP_CAN::mcp25625_write_id( const INT8U mcp_addr, const INT8U ext, const INT32U id )$/;"	f	class:MCP_CAN
+mcp25625_write_id	ps-spi-app.c	/^void mcp25625_write_id(int fd, const uint8_t mcp_addr)$/;"	f
+mcp25625_write_mf	CAN_Rx/MCP_CAN.cpp	/^void MCP_CAN::mcp25625_write_mf( const INT8U mcp_addr, const INT8U ext, const INT32U id )$/;"	f	class:MCP_CAN
+mcp25625_write_mf	CAN_Tx/MCP_CAN.cpp	/^void MCP_CAN::mcp25625_write_mf( const INT8U mcp_addr, const INT8U ext, const INT32U id )$/;"	f	class:MCP_CAN
+mcpMode	CAN_Rx/MCP_CAN.h	/^    INT8U   mcpMode;                       \/\/ Mode to return to after configurations are performed.$/;"	m	class:MCP_CAN
+mcpMode	CAN_Tx/MCP_CAN.h	/^    INT8U   mcpMode;                       \/\/ Mode to return to after configurations are performed.$/;"	m	class:MCP_CAN
+msDelay	CAN_Rx/swDelay.cpp	/^void msDelay(unsigned int mS)$/;"	f
+msDelay	CAN_Tx/swDelay.cpp	/^void msDelay(unsigned int mS)$/;"	f
+myCanMsg	ps-spi-app.c	/^canMsg myCanMsg;$/;"	v
+readMsg	CAN_Rx/MCP_CAN.cpp	/^INT8U MCP_CAN::readMsg()$/;"	f	class:MCP_CAN
+readMsg	CAN_Tx/MCP_CAN.cpp	/^INT8U MCP_CAN::readMsg()$/;"	f	class:MCP_CAN
+readMsgBuf	CAN_Rx/MCP_CAN.cpp	/^INT8U MCP_CAN::readMsgBuf(INT32U *id, INT8U *ext, INT8U *len, INT8U buf[])$/;"	f	class:MCP_CAN
+readMsgBuf	CAN_Rx/MCP_CAN.cpp	/^INT8U MCP_CAN::readMsgBuf(INT32U *id, INT8U *len, INT8U buf[])$/;"	f	class:MCP_CAN
+readMsgBuf	CAN_Tx/MCP_CAN.cpp	/^INT8U MCP_CAN::readMsgBuf(INT32U *id, INT8U *ext, INT8U *len, INT8U buf[])$/;"	f	class:MCP_CAN
+readMsgBuf	CAN_Tx/MCP_CAN.cpp	/^INT8U MCP_CAN::readMsgBuf(INT32U *id, INT8U *len, INT8U buf[])$/;"	f	class:MCP_CAN
+seg7Init	CAN_Rx/led7.cpp	/^void seg7Init(void)$/;"	f
+seg7Init	CAN_Tx/led7.cpp	/^void seg7Init(void)$/;"	f
+sendMsg	CAN_Rx/MCP_CAN.cpp	/^INT8U MCP_CAN::sendMsg()$/;"	f	class:MCP_CAN
+sendMsg	CAN_Tx/MCP_CAN.cpp	/^INT8U MCP_CAN::sendMsg()$/;"	f	class:MCP_CAN
+sendMsg	ps-spi-app.c	/^uint8_t sendMsg(int fd)$/;"	f
+sendMsgBuf	CAN_Rx/MCP_CAN.cpp	/^INT8U MCP_CAN::sendMsgBuf(INT32U id, INT8U ext, INT8U len, INT8U *buf)$/;"	f	class:MCP_CAN
+sendMsgBuf	CAN_Rx/MCP_CAN.cpp	/^INT8U MCP_CAN::sendMsgBuf(INT32U id, INT8U len, INT8U *buf)$/;"	f	class:MCP_CAN
+sendMsgBuf	CAN_Tx/MCP_CAN.cpp	/^INT8U MCP_CAN::sendMsgBuf(INT32U id, INT8U ext, INT8U len, INT8U *buf)$/;"	f	class:MCP_CAN
+sendMsgBuf	CAN_Tx/MCP_CAN.cpp	/^INT8U MCP_CAN::sendMsgBuf(INT32U id, INT8U len, INT8U *buf)$/;"	f	class:MCP_CAN
+sendMsgBuf	ps-spi-app.c	/^uint8_t sendMsgBuf(int fd, uint16_t id, uint32_t eid, uint8_t ide, uint8_t rtr, uint8_t len, uint8_t * data)$/;"	f
+setMode	CAN_Rx/MCP_CAN.cpp	/^INT8U MCP_CAN::setMode(const INT8U opMode)$/;"	f	class:MCP_CAN
+setMode	CAN_Tx/MCP_CAN.cpp	/^INT8U MCP_CAN::setMode(const INT8U opMode)$/;"	f	class:MCP_CAN
+setMsg	CAN_Rx/MCP_CAN.cpp	/^INT8U MCP_CAN::setMsg(INT32U id, INT8U rtr, INT8U ext, INT8U len, INT8U *pData)$/;"	f	class:MCP_CAN
+setMsg	CAN_Tx/MCP_CAN.cpp	/^INT8U MCP_CAN::setMsg(INT32U id, INT8U rtr, INT8U ext, INT8U len, INT8U *pData)$/;"	f	class:MCP_CAN
+setMsg	ps-spi-app.c	/^void setMsg(int fd, uint16_t id, uint32_t eid, uint8_t ide, uint8_t rtr, uint8_t len, uint8_t * data)$/;"	f
+set_digit	CAN_Rx/led7.cpp	/^void set_digit(int dsp, int value, int dp)$/;"	f
+set_digit	CAN_Tx/led7.cpp	/^void set_digit(int dsp, int value, int dp)$/;"	f
+spi_read	CAN_Rx/MCP_CAN.cpp	40;"	d	file:
+spi_read	CAN_Tx/MCP_CAN.cpp	40;"	d	file:
+spi_readwrite	CAN_Rx/MCP_CAN.cpp	39;"	d	file:
+spi_readwrite	CAN_Tx/MCP_CAN.cpp	39;"	d	file:
+test_7seg_leds	CAN_Rx/led7.cpp	/^void test_7seg_leds(void)$/;"	f
+test_7seg_leds	CAN_Tx/led7.cpp	/^void test_7seg_leds(void)$/;"	f
+usDelay	CAN_Rx/swDelay.cpp	/^void usDelay(unsigned int us)$/;"	f
+usDelay	CAN_Tx/swDelay.cpp	/^void usDelay(unsigned int us)$/;"	f
