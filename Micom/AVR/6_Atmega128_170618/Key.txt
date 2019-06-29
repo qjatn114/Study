@@ -1,0 +1,87 @@
+#include <avr/io.h>
+
+void LED_Init(void);
+void LED_On(unsigned char Data);
+
+void Buzzer_Init(void);
+void Buzzer_On(unsigned char Data);
+
+void Key_Init(void);
+unsigned char Key_Input(void);
+
+void Delay(unsigned long OnOff);
+
+int main(void)
+{
+	unsigned char Key_Push;
+	LED_Init();
+	Buzzer_Init();
+	Key_Init();
+
+	while(1)
+	{
+		Key_Push = Key_Input();
+		if(Key_Push)
+		{
+			Buzzer_On(1);
+		}
+		else
+		{
+			Buzzer_On(0);
+		}
+/*		LED_On(0xff);
+		Delay(100000);
+		LED_On(0x00);
+		Delay(100000);
+*/
+	}
+}
+
+void LED_Init(void)
+{
+	DDRA = 0xFF;
+	DDRG |= 0x08;
+}
+
+void LED_On(unsigned char Data)
+{
+	PORTA = Data;
+	PORTG &= 0xf7;
+	PORTG |= 0x08;
+	PORTG &= 0xf7;
+}
+
+void Delay(unsigned long Times)
+{
+	volatile unsigned long i;
+	for(i=0;i<Times;i++);
+}
+
+void Buzzer_Init(void)
+{
+	/* 포트 초기화 (PE2 :출력)*/
+	DDRE |= (1 << DDE2);
+}
+
+void Buzzer_On(unsigned char OnOff)
+{
+	if(OnOff)		//Buzzer On
+		PORTE |= (1 << PE2);
+	else				//Buzzer Off
+		PORTE = PORTE & (~(1 << PE2));
+
+}
+
+void Key_Init(void)
+{
+	/*포트 초기화 (PE4 : 입력)*/
+	DDRE &= (~(1 << PE4));
+}
+
+unsigned char Key_Input(void)
+{
+	if( PINE & (1 << PINE4) )
+		return 0;
+	else
+		return 1;
+}

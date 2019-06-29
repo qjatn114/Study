@@ -1,0 +1,200 @@
+#ifndef _FND_H_
+#define _FND_H_
+
+void FND_Init(void);
+void FND_On(unsigned char Num,unsigned char Digit,unsigned char Dot);
+void FND_Write(unsigned char Num,unsigned char Digit,unsigned char Dot);
+
+
+#endif
+
+
+
+=======================================================
+<fnd.c>
+#include <avr/io.h>
+#include <avr/interrupt.h>
+
+const unsigned char FND_Number[10] = {0xc0,0xf9,0xa4,0xb0,0x99,0x92,0x82,0xd8,0x80,0x90};
+const unsigned char FND_Common[4] = {0x10,0x20,0x40,0x80};
+const unsigned char FND_Dot[2] = {0xff, ~(1<<PA7) };
+unsigned char FND_Buffer[4] = {0xff,0xff,0xff,0xff};
+
+void FND_Init(void)
+{
+	/* FND초기화(PA0~7 :출력  FND_LE(PG4):출력  FND_0~4(PF4~7):출력 ) */
+	DDRA |= 0xFF;
+	DDRG |= (1<<DDG4);
+	DDRF |= 0xF0;
+
+	/* Timer2 초기화 (CTC Mode, 1/256, 5ms interrupt) */
+	TCCR2 = 0x0c;			
+	OCR2 = 143;					// 143 : 5ms
+	TIMSK |= (1 << OCIE2);		//Interrupt Enable
+}
+void FND_On(unsigned char Num,unsigned char Digit,unsigned char Dot)
+{
+	/* FND 켠다 */
+	/* 1. Segment 신호 */
+	PORTA = FND_Number[Num] & FND_Dot[Dot];
+	PORTG &= ~(1<<PG4);
+	PORTG |= (1<<PG4);
+	PORTG &= ~(1<<PG4);
+	/* 2. Common 신호 */	
+	PORTF = (PORTF & 0x0F) | FND_Common[Digit];
+}
+void FND_Write(unsigned char Num,unsigned char Digit,unsigned char Dot)
+{
+	FND_Buffer[Digit] = FND_Number[Num] & FND_Dot[Dot];	
+}
+
+ISR(TIMER2_COMP_vect)
+{
+	static unsigned char Digit = 0;
+
+	Digit++;
+	Digit %= 4;
+
+
+	/* FND 켠다 */
+	/* 1. Segment 신호 */
+	PORTA = FND_Buffer[Digit];
+	PORTG &= ~(1<<PG4);
+	PORTG |= (1<<PG4);
+	PORTG &= ~(1<<PG4);
+	/* 2. Common 신호 */	
+	PORTF = (PORTF & 0x0F) | FND_Common[Digit];
+}
+
+
+=======================================================
+main.c
+
+#include <avr/io.h>
+#include <avr/interrupt.h>
+
+#include "led.h"
+#include "buzzer.h"
+#include "fnd.h"
+#include "key.h"
+#include "delay.h"
+#include "uart.h"
+
+void UART_Control(void);
+const unsigned char LED_Pattern[8] = {0x00,0x81,0x42,0x24,0x18,0x55,0xaa,0xff};
+
+int main(void)
+{
+	unsigned char Key_Push,i;
+
+	LED_Init();
+	Buzzer_Init();
+	Key_Init();
+	FND_Init();
+	UART_Init();
+
+	Buzzer_On(1);
+	Delay(10000);
+	Buzzer_On(0);
+	
+	UART_PutChar('A');
+	UART_PutChar('B');
+	UART_PutChar('C');
+	UART_PutChar('D');
+	UART_PutString("\r\n==========================\r\n");
+	UART_PutString("==ATmega128 Test Program==\r\n");	
+	UART_PutString("==========================\r\n");
+	
+	/* 외부인터럽트 초기화 */
+	EICRB = (EICRB & ~0x03) | 0x02;	//Falling Edge
+	EIMSK |= (1 << INT4);		
+
+	sei();		//Enable Global Interrupt
+
+	
+	while(1)
+	{
+		UART_Control();
+	}
+}
+
+void UART_Control(void)
+{
+	unsigned char Data;
+	/* UART 데이터 받아옴 */
+	if(UART_GetChar(&Data) == 0)
+		return;
+	/* FND 표시 */
+	FND_Write(Data%10,0,0);
+	FND_Write(Data/10 %10,1,0);
+	FND_Write(Data/100 %10,2,0);
+	FND_Write(Data/1000 %10,3,0);
+}
+
+ISR(INT4_vect)
+{
+	static unsigned char KeyCount = 0;
+	KeyCount++;
+	FND_On(KeyCount % 10,0,0);
+}
+
+=======================================================
+uart.c
+
+#include <avr/io.h>
+#include <avr/interrupt.h>
+
+unsigned char UART_Buffer;
+unsigned char UART_Flag=0;		//0:없음, 1: 있음
+void UART_Init(Void)
+{
+	/* 레지스터 초기화 (Data : 8bit, Parity : None, Stopbit : 1bit, Boardrate : 115200) */
+	UCSR1B = 0x98;
+	UCSR1C = 0x06;
+	UBRR1H = 0;
+	UBRR1L = 3;		// 3: 115200bps
+}
+
+void UART_PutChar(unsigned char Data)
+{
+	/* UDRE 비었는지 확인 */
+	
+	while( (UCSR1A & (1 << UDRE1)) ==0 );
+	UDR1 = Data;
+	
+}
+
+void UART_PutString(char *String)
+{
+	while(*String)
+	{
+		UART_PutChar(*String);
+		String++;
+	} 
+}
+
+unsigned char UART_GetChar(unsigned char *Data)
+{
+	if(UART_Flag)
+	{
+		*Data = UART_Buffer;
+		UART_Flag = 0;
+		return 1;
+	}
+	else
+	{
+		return 0;
+	}
+}
+
+ISR(USART1_RX_vect)
+{
+	UART_Buffer = UDR1;
+	UART_Flag=1;
+}
+
+=======================================================
+
+=======================================================
+
+==============================================================================================================

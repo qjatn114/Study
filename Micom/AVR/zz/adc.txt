@@ -1,0 +1,184 @@
+main.c
+#include <avr/io.h>
+#include <avr/interrupt.h>
+
+#include "led.h"
+#include "buzzer.h"
+#include "fnd.h"
+#include "key.h"
+#include "delay.h"
+#include "uart.h"
+#include "timer.h"
+#include "adc.h"
+
+void UART_Control(void);
+void StopWatch_Display(void);
+void ADC_Display(void);
+
+const unsigned char LED_Pattern[8] = {0x00,0x81,0x42,0x24,0x18,0x55,0xaa,0xff};
+
+int main(void)
+{
+	unsigned char Key_Push,i;
+
+	LED_Init();
+	Buzzer_Init();
+	Key_Init();
+	FND_Init();
+	UART_Init();
+	Timer_Init();
+	ADC_Init();	
+
+	Buzzer_On(1);
+	Delay(10000);
+	Buzzer_On(0);
+	
+	UART_PutChar('A');
+	UART_PutChar('B');
+	UART_PutChar('C');
+	UART_PutChar('D');
+	UART_PutString("\r\n==========================\r\n");
+	UART_PutString("==ATmega128 Test Program==\r\n");	
+	UART_PutString("==========================\r\n");
+	
+	/* 외부인터럽트 초기화 */
+	EICRB = (EICRB & ~0x03) | 0x02;	//Falling Edge
+	EIMSK |= (1 << INT4);		
+
+	sei();		//Enable Global Interrupt
+
+	
+	while(1)
+	{
+		UART_Control();
+		ADC_Display();
+		//StopWatch_Display();
+	}
+}
+
+void UART_Control(void)
+{
+	unsigned char Data;
+	/* UART 데이터 받아옴 */
+	if(UART_GetChar(&Data) == 0)
+		return;
+
+	switch(Data)
+	{
+		case 0:					// stop
+			Timer_Stop();
+			break;
+		case 1:					// start
+			Timer_Start();
+			break;
+		case 2:					// reset
+			Timer_Reset();
+			break;
+		default :
+			break;
+	}
+	
+	/* FND 표시 */	
+/*
+	FND_Write(Data%10,0,0);
+	FND_Write(Data/10 %10,1,0);
+	FND_Write(Data/100 %10,2,0);
+	FND_Write(Data/1000 %10,3,0);
+*/
+}
+
+void StopWatch_Display(void)
+{
+	unsigned short Time;
+
+	Time = Timer_GetTime();
+
+		/* FND 표시 */
+	FND_Write(Time%10,0,0);				//0.1초의 자리
+	FND_Write(Time/10 %10,1,1);			//1초의 자리
+	FND_Write(Time/100 %6,2,0);			//10초의 자리
+	FND_Write(Time/600 %10,3,1);		//1분의 자리
+
+}
+
+void ADC_Display(void)
+{
+	unsigned short ADCData;
+	/*ADC Start*/
+	ADC_Start(1);
+
+	/*ADC 받아옴*/
+	while( (ADC_GetData(1,&ADCData) == 0) );
+
+
+	/*FND 표시*/
+	FND_Write(ADCData%10,0,0);
+	FND_Write(ADCData/10 %10,1,0);
+	FND_Write(ADCData/100 %10,2,0);
+	FND_Write(ADCData/1000 %10,3,0);
+}
+
+ISR(INT4_vect)
+{
+	static unsigned char KeyCount = 0;
+	KeyCount++;
+	FND_On(KeyCount % 10,0,0);
+}
+==========================================================================================
+#ifndef _ADC_H_
+#define _ADC_H_
+
+void ADC_Init(void);
+void ADC_Start(unsigned char Channel);
+unsigned char ADC_GetData(unsigned char Channel, unsigned short *ADCData);
+
+
+
+#endif
+
+==============================================================================================
+adc.c
+
+
+#include <avr/io.h>
+#include <avr/interrupt.h>
+
+
+unsigned short ADC_Buffer[4];
+unsigned char ADC_Flag[4] = {0, };		//0 : 없음, 1 : 있음
+
+void ADC_Init(void)
+{
+	/* Register Init */
+	ADMUX = 0x40;
+	ADCSRA = 0x8f;
+}
+
+void ADC_Start(unsigned char Channel)
+{
+	while(ADCSRA & (1 << ADSC) );		// 이전 ADC 끝날 때까지 기다림 
+	ADMUX = (ADMUX & 0xe0) | Channel;
+	ADCSRA |= (1 << ADSC); 		//ADC Start
+}
+
+unsigned char ADC_GetData(unsigned char Channel, unsigned short *ADCData)
+{
+	if(ADC_Flag[Channel])
+	{
+		*ADCData = ADC_Buffer[Channel];
+		ADC_Flag[Channel] = 0;
+		return 1;
+	}
+	else
+	{
+		return 0;
+	}
+}
+ISR(ADC_vect)
+{
+	unsigned char Channel;
+	Channel = ADMUX & 0x1f;
+	ADC_Buffer[Channel] = ADCL + ( (unsigned short)ADCH << 8 );	//16bit이기 때문에 상위 8bit로 올림
+	ADC_Flag[Channel] = 1;
+}
+=======================================================

@@ -1,0 +1,116 @@
+#include <avr/io.h>
+
+#define Buzzer_PIN 0x04
+
+void LED_Init(void);
+void LED_On(unsigned char Data);
+void Buzzer_Init(void);
+void Buzzer_On(unsigned char Data);
+void Delay(unsigned long Times);
+int main(void)
+{
+
+	LED_Init();
+	Buzzer_Init();
+	Buzzer_On(Buzzer_PIN);
+	Delay(100000);
+	Buzzer_On(0);
+
+	while(1)
+	{
+		LED_On(0xff);
+		Delay(10000);
+		LED_On(0x00);
+		Delay(100000);
+	}
+}
+
+void LED_Init(void)
+{
+	DDRA = 0xFF;
+	DDRG |= 0x08;
+}
+
+void LED_On(unsigned char Data)
+{
+	PORTA = Data;
+	PORTG &= 0xf7;
+	PORTG |= 0x08;
+	PORTG &= 0xf7;
+}
+
+void Delay(unsigned long Times)
+{
+	volatile unsigned long i;
+	for(i=0;i<Times;i++);
+}
+
+void Buzzer_Init(void)
+{
+	DDRE |= 0x04;
+}
+void Buzzer_On(unsigned char Data)
+{
+	PORTE = Data;
+}
+------------------------------------------------
+#include <avr/io.h>
+
+
+
+void LED_Init(void);
+void LED_On(unsigned char Data);
+void Buzzer_Init(void);
+void Buzzer_On(unsigned char Data);
+void Delay(unsigned long Times);
+
+int main(void)
+{
+
+	LED_Init();
+	Buzzer_Init();
+	Buzzer_On(1);
+	Delay(100000);
+	Buzzer_On(0);
+
+	while(1)
+	{
+		LED_On(0xff);
+		Delay(10000);
+		LED_On(0x00);
+		Delay(100000);
+	}
+}
+
+void LED_Init(void)
+{
+	DDRA = 0xFF;
+	DDRG |= 0x08;
+}
+
+void LED_On(unsigned char Data)
+{
+	PORTA = Data;
+	PORTG &= 0xf7;
+	PORTG |= 0x08;
+	PORTG &= 0xf7;
+}
+
+void Delay(unsigned long Times)
+{
+	volatile unsigned long i;
+	for(i=0;i<Times;i++);
+}
+
+void Buzzer_Init(void)
+{
+	DDRE |= 0x04;
+}
+
+void Buzzer_On(unsigned char Data)
+{
+	if(Data == 1)
+		PORTE |= 0x04;
+	else
+		PORTE &= 0xfb;
+}

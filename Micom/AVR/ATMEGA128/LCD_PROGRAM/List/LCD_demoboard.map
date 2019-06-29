@@ -1,0 +1,31 @@
+RAM Allocation [bytes]
+Variable                                                                          Address   Size
+------------------------------------------------------------------------------------------------
+str_mega128                                                                       0x0500       9
+str_welcome                                                                       0x0509       9
+str_countup                                                                       0x0512       9
+str_ea                                                                            0x051B       3
+
+EEPROM Allocation [bytes]
+Variable                                                                          Address   Size
+------------------------------------------------------------------------------------------------
+
+Register Allocation
+Variable                                                                          Register  Size
+------------------------------------------------------------------------------------------------
+time_count                                                                        R5           1
+time_flag                                                                         R2.0      1bit
+tmp_index                                                                         R4           1
+lcd_mode                                                                          R7           1
+count                                                                             R6           1
+
+FLASH Allocation [words]
+Function                                                                          Address   Size
+------------------------------------------------------------------------------------------------
+set_led                                                                           0x000A4     59
+main                                                                              0x000DF    188
+lcd_busy_wait                                                                     0x0019B     15
+lcd_data_write                                                                    0x001AE     14
+lcd_home                                                                          0x001C9      2
+lcd_clear                                                                         0x001CB      3
+lcd_print_data                                                                    0x001CE     18

@@ -1,0 +1,20 @@
+RAM Allocation
+Variable                                                          Address   Size
+--------------------------------------------------------------------------------
+str_mega128                                                       0x0500       9
+str_welcome                                                       0x0509       9
+str_countup                                                       0x0512       9
+str_ea                                                            0x051B       3
+
+EEPROM Allocation
+Variable                                                          Address   Size
+--------------------------------------------------------------------------------
+
+Register Allocation
+Variable                                                          Register  Size
+--------------------------------------------------------------------------------
+time_count                                                        R5           1
+time_flag                                                         R2.0      1bit
+tmp_index                                                         R4           1
+lcd_mode                                                          R7           1
+count                                                             R6           1

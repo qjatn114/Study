@@ -1,0 +1,54 @@
+#include <avr/io.h>
+
+#include "led.h"
+#include "buzzer.h"
+#include "fnd.h"
+#include "key.h"
+#include "delay.h"
+
+const unsigned char LED_Pattern[8] = {0x00,0x81,0x42,0x24,0x18,0x55,0xaa,0xff};
+
+int main(void)
+{
+	unsigned char Key_Push,i;
+	LED_Init();
+	Buzzer_Init();
+	Key_Init();
+	FND_Init();
+	Buzzer_On(1);
+	Delay(10000);
+	Buzzer_On(0);
+
+	
+	while(1)
+	{
+
+		FND_On(0,0,0);
+		Delay(100);
+		FND_On(1,1,0);
+		Delay(100);
+		FND_On(2,2,0);
+		Delay(100);
+		FND_On(3,3,0);
+		Delay(100);
+
+
+
+		Key_Push = Key_Input();
+		if(Key_Push)
+		{
+			Buzzer_On(1);
+		}
+		else
+		{
+			Buzzer_On(0);
+		}
+		for(i=0;i<8;i++)
+		{
+			LED_On(LED_Pattern[i]);
+			Delay(100000);
+		}
+	}
+}
+
+

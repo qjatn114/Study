@@ -1,0 +1,127 @@
+#include <avr/io.h>
+
+void FND_Init(void);
+void FND_On(unsigned char Num,unsigned char Digit,unsigned char Dot);
+
+void LED_Init(void);
+void LED_On(unsigned char Data);
+
+void Buzzer_Init(void);
+void Buzzer_On(unsigned char Data);
+
+void Key_Init(void);
+unsigned char Key_Input(void);
+
+void Delay(unsigned long OnOff);
+
+const unsigned char LED_Pattern[8] = {0x00,0x81,0x42,0x24,0x18,0x55,0xaa,0xff};
+const unsigned char FND_Number[10] = {0xc0,0xf9,0xa4,0xb0,0x99,0x92,0x82,0xd8,0x80,0x90};
+const unsigned char FND_Common[4] = {0x10,0x20,0x40,0x80};
+const unsigned char FND_Dot[2] = {0xff, ~(1<<PA7) };
+int main(void)
+{
+	unsigned char Key_Push,i;
+	LED_Init();
+	Buzzer_Init();
+	Key_Init();
+	FND_Init();
+
+
+	
+	while(1)
+	{
+
+		FND_On(0,0,0);
+		Delay(100);
+		FND_On(1,1,0);
+		Delay(100);
+		FND_On(2,2,0);
+		Delay(100);
+		FND_On(3,3,0);
+		Delay(100);
+
+
+
+		Key_Push = Key_Input();
+		if(Key_Push)
+		{
+			Buzzer_On(1);
+		}
+		else
+		{
+			Buzzer_On(0);
+		}
+		/*for(i=0;i<8;i++)
+		{
+			LED_On(LED_Pattern[i]);
+			Delay(100000);
+		}*/
+	}
+}
+
+void LED_Init(void)
+{
+	DDRA |= 0xFF;
+	DDRG |= 0x08;
+}
+
+void LED_On(unsigned char Data)
+{
+	PORTA = Data;
+	PORTG &= 0xf7;		//LATCH 신호  
+	PORTG |= 0x08;
+	PORTG &= 0xf7;
+}
+
+void Delay(unsigned long Times)
+{
+	volatile unsigned long i;
+	for(i=0;i<Times;i++);
+}
+
+void Buzzer_Init(void)
+{
+	/* 포트 초기화 (PE2 :출력)*/
+	DDRE |= (1 << DDE2);
+}
+
+void Buzzer_On(unsigned char OnOff)
+{
+	if(OnOff)		//Buzzer On
+		PORTE |= (1 << PE2);
+	else				//Buzzer Off
+		PORTE = PORTE & (~(1 << PE2));
+
+}
+
+void Key_Init(void)
+{
+	/*포트 초기화 (PE4 : 입력)*/
+	DDRE &= (~(1 << PE4));
+}
+
+unsigned char Key_Input(void)
+{
+	if( PINE & (1 << PINE4) )
+		return 0;
+	else
+		return 1;
+}
+void FND_Init(void)
+{
+	/* FND초기화(PA0~7 :출력  FND_LE(PG4):출력  FND_0~4(PF4~7):출력 ) */
+	DDRA |= 0xFF;
+	DDRG |= (1<<DDG4);
+	DDRF |= 0xF0;
+}
+void FND_On(unsigned char Num,unsigned char Digit,unsigned char Dot)
+{
+	/* FND 켠다 */
+	/* 1. Segment 신호 */
+	PORTA = FND_Number[Num] & FND_Dot[Dot];
+	PORTG &= ~(1<<PG4);
+	PORTG |= (1<<PG4);
+	PORTG &= ~(1<<PG4);
+	/* 2. Common 신호 */	
+	PORTF = (PORTF & 0x0F) | FND_Common[Digit];
+}

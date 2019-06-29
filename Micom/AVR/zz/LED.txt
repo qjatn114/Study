@@ -1,0 +1,39 @@
+#include <avr/io.h>
+
+void LED_Init(void);
+void LED_On(unsigned char Data);
+void Delay(unsigned long Times);
+int main(void)
+{
+
+	LED_Init();
+	
+
+	while(1)
+	{
+		LED_On(0xff);
+		Delay(100000);
+		LED_On(0x00);
+		Delay(100000);
+	}
+}
+
+void LED_Init(void)
+{
+	DDRA = 0xFF;
+	DDRG |= 0x08;
+}
+
+void LED_On(unsigned char Data)
+{
+	PORTA = Data;
+	PORTG &= 0xf7;
+	PORTG |= 0x08;
+	PORTG &= 0xf7;
+}
+
+void Delay(unsigned long Times)
+{
+	volatile unsigned long i;
+	for(i=0;i<Times;i++);
+}

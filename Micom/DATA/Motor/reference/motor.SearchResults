@@ -1,0 +1,4 @@
+---- DCMOTOR_MAX_RPM Matches (3 in 1 files) ----
+Main.c:#define DCMOTOR_MAX_RPM	10000
+Main.c:	DCMotor.DesiredSpeed = (unsigned long) Volume * DCMOTOR_MAX_RPM / 1023;
+Main.c:	Duty = (unsigned long)DCMotor.DesiredSpeed * 1023 /DCMOTOR_MAX_RPM ;

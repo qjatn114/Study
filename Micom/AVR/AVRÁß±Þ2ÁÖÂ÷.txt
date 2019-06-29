@@ -1,0 +1,892 @@
+====================main.c=======================================================
+#include "led.h"
+#include "type.h"
+#include "fnd.h"
+#include "extint.h"
+#include "uart.h"
+#include "timer.h"
+#include "adc.h"
+#include "lcd.h"
+#include "keyy.h"
+#include "remocon.h"
+#include <avr/interrupt.h>
+
+static void Init(void);
+static void Delay(uint32_t Times);
+static void Key_Count_Polling(void);
+static void Key_Count_Callback(void);
+static void UART_Count_Callback(uint16_t Data);
+static void StopWatch_Display(void);
+static void Volume_Callback(uint16_t ADCValue);
+static void Bright_Callback(uint16_t ADCValue);
+static void Temp_Callback(uint16_t ADCValue);
+static void ADC_Trigger(void);
+static void KEY_Control(Key_t Key);
+
+
+const uint8_t LED_Pattern[] = {0x00,0x81,0x42,0x24,0x18,0x55,0x44,0xff};
+static uint16_t Time;
+static uint8_t Time_Flag = 0;
+int main(void)
+{
+	uint8_t i;
+	
+	Init();
+
+	LED_On(0x13);
+	FND_Write(0,0,0);
+	FND_Write(1,1,0);
+	FND_Write(2,2,0);
+	FND_Write(3,3,0);
+
+	UART_PutChar('A');
+	UART_PutChar('B');
+	UART_PutChar('C');
+	UART_PutChar('D');
+	UART_PutString("\r\n=====================");
+	UART_PutString("\r\n======ATmega128======");
+	UART_PutString("\r\n=====================");
+
+	LCD_FillColor(0, 160, 30, 320,BLACK);
+	LCD_FillColor(29, 160, 30, 320,WHITE);
+	LCD_FillColor(59, 160, 30, 320,YELLOW);
+	LCD_FillColor(89, 160, 30, 320,RED);
+	LCD_FillColor(119, 160, 30, 320,GREEN);
+	LCD_FillColor(149, 160, 30, 320,BLUE);
+	LCD_FillColor(179, 160, 30, 320,CYAN);
+	LCD_FillColor(209, 160, 30, 320,MAGENTA); 
+
+
+	LCD_WriteString(10, 10,"ABCDEFG 솔루션 공과 전자학원",YELLOW, BLUE);
+	LCD_WriteEnglish(10,26,'1',YELLOW,BLUE);
+	LCD_WriteEnglish(18,26,'2',YELLOW,BLUE);
+	LCD_WriteEnglish(26,26,'3',YELLOW,BLUE);
+	LCD_WriteEnglish(34,26,'4',YELLOW,BLUE);
+	LCD_DrawRect(100, 100, 200, 200, 0, RED);
+	LCD_DrawCircle(120, 160, 100, 0, CYAN);
+
+	Alarm_Open(ALARM0,100,StopWatch_Display);
+	UART_Open(UART_Count_Callback);
+//	ExtInt_Open(Key_Count_Callback);
+//	Alarm_Open(ALARM1,100,ADC_Trigger);
+	ADC_Open(1,Volume_Callback);	//가변저항
+	ADC_Open(3,Bright_Callback);	//밝기
+	ADC_Open(2,Temp_Callback);		//온도
+
+	KEY_Open(KEY_Control);
+	
+	sei();		//Global Interrupt Enable
+	while(1)
+	{
+		for(i=0;i<8;i++)
+		{
+			LED_On(LED_Pattern[i]);
+			Timer_msDelay(500);
+		}
+		
+//		Key_Count_Polling();
+
+	}
+}
+
+
+static void Init(void)
+{
+	/*드라이버 초기화*/
+	LED_Init();
+	FND_Init();
+	Extint_Init();
+	UART_Init();
+	Timer_Init();
+	LCD_Init();
+	ADC_Init();
+	KEY_Init();
+	Remocon_Init();
+}
+
+static void Delay(uint32_t Times)
+{
+	volatile uint32_t j;
+
+	for(j=0;j < Times;j++);
+}
+
+static void Key_Count_Polling(void)
+{
+	static uint16_t Count = 0;
+	
+	/* 눌렸는지 확인 */
+	if(Extint_Check()== 0)
+		return;
+	
+	/* 카운터 증가 */
+	Count++;
+
+	/* FND 표시 */
+	FND_Write(Count % 10,0,0);					// 1의 자리
+	FND_Write(Count/10 %10,1,0);				// 10의 자리
+	FND_Write(Count / 100 % 10,2,0);			// 100의 자리
+	FND_Write(Count / 1000 % 10,3,0);			// 1000의 자리
+}
+
+static void Key_Count_Callback(void)
+{
+	static uint16_t Count = 0;
+	
+	/* 카운터 증가 */
+	Count++;
+
+	/* FND 표시 */
+	FND_Write(Count % 10,0,0);					// 1의 자리
+	FND_Write(Count/10 %10,1,0);				// 10의 자리
+	FND_Write(Count / 100 % 10,2,0);			// 100의 자리
+	FND_Write(Count / 1000 % 10,3,0);			// 1000의 자리
+}
+
+static void UART_Count_Callback(uint16_t Data)
+{
+	switch(Data)
+	{
+		case 0:			//stop
+			Time_Flag = 0;
+			break;
+		case 1:			//start
+			Time_Flag = 1;
+			break;
+		case 2:			//reset
+			Time_Flag = 0;
+			Time = 0;
+			break;
+		default :
+			break;
+	}
+	/* FND 표시 */
+/*	FND_Write(Data % 10,0,0);					// 1의 자리
+	FND_Write(Data/10 %10,1,0);				// 10의 자리
+	FND_Write( Data/ 100 % 10,2,0);			// 100의 자리
+	FND_Write( Data/ 1000 % 10,3,0);			// 1000의 자리
+	*/
+}
+
+static void StopWatch_Display(void)
+{
+	if(Time_Flag)
+	{
+		Time++;
+	}
+		/* FND 표시 */
+	FND_Write(Time      % 10,0,0);				// 0.1초
+	FND_Write(Time/ 10  %10,1,0);				// 1초 자리
+	FND_Write(Time/ 100 % 6,2,0);			// 10초 자리
+	FND_Write(Time/ 600 % 10,3,0);			// 1분의 자리
+}
+
+static void Volume_Callback(uint16_t ADCValue)
+{
+	LCD_WriteString(10, 100, "가변저항:" , YELLOW, BLUE);
+ 	LCD_WriteEnglish(90 + 8, 100, ADCValue / 1000 % 10 + '0' , YELLOW, BLUE);
+ 	LCD_WriteEnglish(90 + 16, 100, ADCValue / 100 % 10 + '0' , YELLOW, BLUE);
+ 	LCD_WriteEnglish(90 + 24, 100, ADCValue / 10 % 10 + '0' , YELLOW, BLUE);
+ 	LCD_WriteEnglish(90 + 32, 100, ADCValue  % 10 + '0' , YELLOW, BLUE);
+}
+
+static void Bright_Callback(uint16_t ADCValue)
+{
+	LCD_WriteString(10, 116, "밝    기:" , YELLOW, BLUE);
+	LCD_WriteEnglish(90 + 8, 116, ADCValue / 1000 % 10 + '0' , YELLOW, BLUE);
+	LCD_WriteEnglish(90 + 16, 116, ADCValue / 100 % 10 + '0' , YELLOW, BLUE);
+	LCD_WriteEnglish(90 + 24, 116, ADCValue / 10 % 10 + '0' , YELLOW, BLUE);
+	LCD_WriteEnglish(90 + 32, 116, ADCValue  % 10 + '0' , YELLOW, BLUE);
+
+}
+
+static void Temp_Callback(uint16_t ADCValue)
+{
+	LCD_WriteString(10, 132, "온    도:" , YELLOW, BLUE);
+	LCD_WriteEnglish(90 + 8, 132, ADCValue / 1000 % 10 + '0' , YELLOW, BLUE);
+	LCD_WriteEnglish(90 + 16, 132, ADCValue / 100 % 10 + '0' , YELLOW, BLUE);
+	LCD_WriteEnglish(90 + 24, 132, ADCValue / 10 % 10 + '0' , YELLOW, BLUE);
+	LCD_WriteEnglish(90 + 32, 132, ADCValue  % 10 + '0' , YELLOW, BLUE);
+
+}
+
+static void ADC_Trigger(void)
+{
+	static uint8_t Channel = 0;
+
+	Channel++;
+	if(Channel == 4)
+	{
+		Channel = 1;
+	}
+
+	ADC_Start(Channel);
+}
+
+static void KEY_Control(Key_t Key)
+{
+	
+	LCD_WriteString(10, 148, "키   	값:" , YELLOW, BLUE);
+switch(Key)
+ {
+  case KEY_RIGHT :
+   LCD_WriteString(90 + 8, 148, "Right " , YELLOW, BLUE); 
+   break;
+  case KEY_UP :
+   LCD_WriteString(90 + 8, 148, "Up   " , YELLOW, BLUE); 
+   break;
+  case KEY_CENTER :
+   LCD_WriteString(90 + 8, 148, "Center" , YELLOW, BLUE); 
+   break;
+  case KEY_LEFT :
+   LCD_WriteString(90 + 8, 148, "Left  " , YELLOW, BLUE); 
+   break;
+  case KEY_DOWN : 
+   LCD_WriteString(90 + 8, 148, "Down  " , YELLOW, BLUE); 
+   break;
+  default :
+   break;
+ }
+}
+=======================adc.c==========================================
+#include "type.h"
+#include "atmega128.h"
+#include "adc.h"
+#include <avr/interrupt.h>
+
+
+ADC_Handle_t ADC_Handle[4]= {NULL,};
+
+
+void ADC_Init(void)
+{
+	/* Register Init */
+	REFS1 = 0;		//01 : AVCC
+	REFS0 = 1;
+
+	ADLAR = 0 ;		// 0 : 오른쪽 정렬
+	ADEN = 1;		// ADC 활성화
+	ADIE = 1;		//인터럽트 활성화
+
+	ADPS2 = 1;		// 111 : 1/128
+	ADPS1 = 1;
+	ADPS0 = 1;
+}
+
+void ADC_Start(uint8_t Channel)
+{
+	while(ADSC);		//ADC끝날 때까지 기다림
+	ADMUX = (ADMUX & 0xE0) | Channel;	//Mux 선택
+	ADSC = 1;		//ADC Start
+}
+
+void ADC_Open(uint8_t Channel,ADC_Handle_t Handle)
+{
+	ADC_Handle[Channel] = Handle;
+}
+
+void ADC_Close(uint8_t Channel)
+{
+	ADC_Handle[Channel] = NULL;
+}
+
+ISR(ADC_vect)
+{
+	uint8_t Channel;
+	uint16_t ADCValue;
+
+	Channel = ADMUX & 0x1f;
+	ADCValue = ADCL + ( (uint16_t)ADCH << 8 );
+	if(ADC_Handle[Channel])
+	{
+		ADC_Handle[Channel](ADCValue);
+	}
+}
+==========================adc.h====================================
+#ifndef _ADC_H_
+#define _ADC_H_
+
+#include "type.h"
+
+
+
+typedef void (*ADC_Handle_t)(uint16_t ADCValue);
+
+void ADC_Init(void);
+void ADC_Start(uint8_t Channel);
+void ADC_Open(uint8_t Channel,ADC_Handle_t Handle);
+void ADC_Close(uint8_t Channel);
+
+
+
+
+
+
+#endif
+==========================extint.c==================================
+#include "type.h"
+#include "atmega128.h"
+#include "extint.h"
+#include <avr/interrupt.h>
+
+
+static uint8_t Extint_Flag = 0;	//0 : NonPushed , 1: Pushed
+static ExtInt_Handle_t ExtInt_Handle = NULL;		//주소값이 없다.
+
+
+void Extint_Init(void)
+{
+	/* 레지스터 초기화 ( INT 4, Falling edge ) */
+	ISC41 = 1;		// 1 0 : Falling Edge
+	ISC40 = 0;
+	INT4 =1;		// Enable Interrupt
+	
+}
+
+uint8_t Extint_Check(void)
+{
+	if(Extint_Flag)
+	{
+		Extint_Flag = 0;
+		return 1;
+	}
+	else
+	{
+		return 0;
+	}
+}
+
+void ExtInt_Open(ExtInt_Handle_t Handle)
+{
+	ExtInt_Handle = Handle;
+}
+
+void ExtInt_Close(void)
+{
+	ExtInt_Handle = NULL;
+}
+
+
+ISR(INT4_vect)
+{
+	Extint_Flag = 1;
+
+	if(ExtInt_Handle)
+	{
+		ExtInt_Handle();
+	}
+}
+================================extint.h=======================================
+
+#ifndef _EXTINT_H_
+#define _EXTINT_H_
+
+typedef void (*ExtInt_Handle_t)(void);
+
+void Extint_Init(void);
+uint8_t Extint_Check(void);
+void ExtInt_Open(ExtInt_Handle_t Handle);
+void ExtInt_Close(void);
+
+
+
+#endif
+=========================fnd.c=========================
+#include "type.h"
+#include "atmega128.h"
+
+#include <avr/interrupt.h>
+
+
+//const는 ROM에 저장하기 위해서 ( 상수 : 변하지 않기 때문에, 변수 : 변하기 때문에 RAM에 저장 )
+const uint8_t FND_Pont[10] = {0xC0,0xF9,0xA4,0xB0,0x99,0x92,0x82,0x80,0x90,0xff};
+const uint8_t FND_Common[4] = {0x10,0x20,0x40,0x80};
+
+uint8_t FND_Buffer[] = {0xff,0xff,0xff,0xff};
+
+void FND_Init(void)
+{
+	/* 포트 초기화 (PA0~7(Data_0~7) : 출력, PG4(FND_LE):출력, PF4~7(FND_0~3) : 출력 ) */
+	DDRA = 0xFF;
+	DDG4 = 1;
+	DDRF |= 0xF0;
+
+	/* 타이머 초기화 (Timer2,CTC Mode, 1/1024, 5ms Interrupt) */
+	WGM21 = 1;
+	WGM20 = 0;
+	CS22 = 1;
+	CS21 = 0;
+	CS20 = 1;
+	OCR2 = 35;	//5ms
+	OCIE2 = 1;	//Interrupt Enable
+}
+
+void FND_On(uint8_t Num,uint8_t Digit,uint8_t Dot)
+{
+	/* Segment 신호 */
+	if(Dot)
+	{
+		PORTA = FND_Pont[Num] & ~0x80;
+	}
+	else
+	{
+		PORTA = FND_Pont[Num];
+	}
+	PORTG4 = 0;
+	PORTG4 = 1;
+	PORTG4 = 0;
+	
+	/* Common 신호 */
+	PORTF = (PORTF & 0x0F) | FND_Common[Digit];
+}
+
+void FND_Write(uint8_t Num,uint8_t Digit,uint8_t Dot)
+{
+	/* Segment 신호 */
+	if(Dot)
+	{
+		FND_Buffer[Digit] = FND_Pont[Num] & 0x7F;
+	}
+	else
+	{
+		FND_Buffer[Digit] = FND_Pont[Num];
+	}
+}
+
+
+/* 5ms 호출 */
+ISR(TIMER2_COMP_vect)
+{
+	static uint8_t Digit = 0;
+
+	/* 0 1 2 3 0 1 2 3...... */
+	Digit++;
+	Digit %= 4;
+	
+	/* Segment 신호 */
+	PORTA = FND_Buffer[Digit];
+	PORTG4 = 0;
+	PORTG4 = 1;
+	PORTG4 = 0;
+	
+	/* Common 신호 */
+	PORTF = (PORTF & 0x0F)| FND_Common[Digit];
+}
+==============================fnd.h============================
+#ifndef _FND_H_
+#define _FND_H_
+
+#include "type.h"
+
+void FND_Init(void);
+void FND_On(uint8_t Num,uint8_t Digit,uint8_t Dot);
+void FND_Write(uint8_t Num,uint8_t Digit,uint8_t Dot);
+
+
+
+#endif
+
+=============================key.c=========================
+#include "type.h"
+#include "keyy.h"
+#include "extint.h"
+#include "adc.h"
+
+#define ADC_KEY_RIGHT    0
+#define ADC_KEY_UP       198
+#define ADC_KEY_CENTER   409
+#define ADC_KEY_LEFT     611
+#define ADC_KEY_DOWN     813
+
+#define ADC_KEY_VARIATION   50
+
+
+
+Key_Handle_t Key_Handle = NULL;
+
+static void Key_Extint_Handle (void);
+static void Key_Adc_Handle(uint16_t ADCValue);
+
+void KEY_Init(void)
+{
+	ADC_Open(0,Key_Adc_Handle);
+	ExtInt_Open(Key_Extint_Handle );
+}
+
+
+void KEY_Open(Key_Handle_t Handle)
+{
+	Key_Handle = Handle;
+}
+
+
+void KEY_Close(void)
+{
+	Key_Handle = NULL;
+}
+
+static void Key_Extint_Handle (void)
+{
+	ADC_Start(0);
+}
+
+static void Key_Adc_Handle(uint16_t ADCValue)
+{
+	/* ADC -> Key */
+	Key_t Key;
+ 
+	 if(ADCValue < (ADC_KEY_RIGHT + ADC_KEY_VARIATION))  
+	 {  
+	 Key = KEY_RIGHT; 
+	 } 
+	 else if(ADCValue < (ADC_KEY_UP + ADC_KEY_VARIATION))  
+	 {  
+	 Key = KEY_UP;  
+	 } 
+	 else if(ADCValue < (ADC_KEY_CENTER + ADC_KEY_VARIATION))  
+	 {  
+	 Key = KEY_CENTER;  
+	 } 
+	 else if(ADCValue < (ADC_KEY_LEFT + ADC_KEY_VARIATION))  
+	 {  
+	 Key = KEY_LEFT;  
+	 } 
+	 else if(ADCValue < (ADC_KEY_DOWN + ADC_KEY_VARIATION))  
+	 {  
+	 Key = KEY_DOWN;  
+	 } 
+	 else  
+	 {  
+	 Key = KEY_NOTHING; 
+	 }
+
+	/* Back */
+	if(Key_Handle)
+	{
+		Key_Handle(Key);
+	}
+}
+===============================key.h=========================
+#ifndef _KEY_H_
+#define _KEY_H_
+
+#include "type.h"
+
+
+typedef enum{
+ KEY_NOTHING,
+ KEY_RIGHT,
+ KEY_UP,
+ KEY_CENTER,
+ KEY_LEFT,
+ KEY_DOWN
+}Key_t;
+
+typedef void (*Key_Handle_t)(Key_t Key);
+
+void KEY_Init(void);
+void KEY_Open(Key_Handle_t Handle);
+void KEY_Close(void);
+
+
+
+
+
+#endif
+======================Remocon.c======================
+#include "remocon.h"
+#include "type.h"
+#include "atmega128.h"
+#include "uart.h"
+#include <avr/interrupt.h>
+
+
+#define NEC_LEADING_CODE_LENGTH  0x103
+#define NEC_LOGIC1_CODE_LENGTH  0x40
+#define NEC_LOGIC0_CODE_LENGTH  0x20
+#define NEC_REPEAT_CODE_LENGTH  0x144
+#define NEC_CODE_LENGTH_VARIATION 4
+#define NEC_LEADING_CODE 'L'
+#define NEC_LOGIC1_CODE  '1'
+#define NEC_LOGIC0_CODE  '0'
+#define NEC_ERROR_CODE  'E'
+
+Remocon_Handle_t Remocon_Handle = NULL;
+
+
+
+
+void Remocon_Init(void)
+{
+	/* Register Init ( Normal Mode : 캡쳐 시간이 변하면 안되므로) */
+	WGM33 = 0;		//0000 : Normal
+	WGM32 = 0;
+	WGM31 = 0;
+	WGM30 = 0;
+
+	ICES3 = 0;		//  0 : Falling edge
+
+	CS32 = 1;		// 100 : 1/256
+	CS31 = 0;
+	CS30 = 0;
+
+	TICIE3 = 1;		// Capture Interrupt Enable
+}
+
+void Remocon_Open(Remocon_Handle_t Handle)
+{
+	Remocon_Handle = Handle;
+	
+}
+
+void Remocon_Close(void)
+{
+	Remocon_Handle = NULL;
+}
+
+ISR(TIMER3_CAPT_vect)
+{
+	uint16_t CurTime;				//현재  시간
+	static uint16_t PrevTime;		//과거 시간
+	uint16_t Interval;				//시간 간격
+	uint8_t Code;					
+	
+	/* 길이 계산 */
+	CurTime = ICR3L + ( (uint16_t)ICR3H << 8 );
+	Interval = CurTime - PrevTime;
+	PrevTime = CurTime;
+	
+	/* 0,1,L 구별 */
+	
+	if((Interval > (NEC_LEADING_CODE_LENGTH - NEC_CODE_LENGTH_VARIATION))
+	 && (Interval < (NEC_LEADING_CODE_LENGTH + NEC_CODE_LENGTH_VARIATION)))
+	 {
+	 Code = NEC_LEADING_CODE;
+	 }
+	 else if((Interval > (NEC_LOGIC1_CODE_LENGTH - NEC_CODE_LENGTH_VARIATION))
+	 && (Interval < (NEC_LOGIC1_CODE_LENGTH + NEC_CODE_LENGTH_VARIATION)))
+	 {
+	 Code = NEC_LOGIC1_CODE;
+	 }
+	 else if((Interval > (NEC_LOGIC0_CODE_LENGTH - NEC_CODE_LENGTH_VARIATION))
+	 && (Interval < (NEC_LOGIC0_CODE_LENGTH + NEC_CODE_LENGTH_VARIATION)))
+	 {
+	 Code = NEC_LOGIC0_CODE;
+	 }
+	 else
+	 {
+	 Code = NEC_ERROR_CODE;
+	 }
+	 UART_PutChar(Code);
+	/* NEC Code 구별 */
+}
+
+==========================Remocon.h--==============================
+#ifndef _REMOCON_H_
+#define _REMOCON_H_
+
+#include "type.h"
+
+typedef enum{
+ REMOCON_UP = 0x12,
+ REMOCON_DOWN = 0x10,
+ REMOCON_LEFT = 0x0B,
+ REMOCON_RIGHT = 0x07,
+ REMOCON_CENTER = 0x1A
+}Remocon_Code_t;
+
+typedef void (*Remocon_Handle_t)(Remocon_Code_t Code);
+
+void Remocon_Init(void);
+void Remocon_Open(Remocon_Handle_t Handle);
+void Remocon_Close(void);
+
+
+
+
+
+
+
+
+#endif
+=================================Timer.c===========================
+#include "type.h"
+#include "atmega128.h"
+#include "timer.h"
+
+#include <avr/interrupt.h>
+
+/*
+static Alarm_Handle_t Alarm_Handle[ALARM_MAX] = {NULL,};
+static uint16_t msPeriod[ALARM_MAX] = 0;
+uint16_t Count[ALARM_MAX] = 0;
+*/
+                                 
+typedef struct{
+	Alarm_Handle_t Alarm_Handle;
+	uint16_t msPeriod;
+	uint16_t Count;
+}Alarm_State_t;
+
+Alarm_State_t Alarm_Table[ALARM_MAX] = {{NULL,0,0},};
+volatile uint16_t Delay_Count = 0;
+
+void Timer_Init(void)
+{
+	/* 레지스터 초기화 (Timer0, CTC, 1/256, 5ms Interrupt) */
+	WGM00 = 1;	//CTC
+	WGM01 = 0;
+
+	CS00 = 0;		// 110 : 1/256
+	CS01 = 1;
+	CS02 = 1;	
+
+	OCR0 = 143;		// 143 : 5ms
+
+	OCIE0 = 1;		// Enable Interrupt
+}
+
+void Alarm_Open(Alarm_t Alarm,uint16_t msPeriod,Alarm_Handle_t Handle)
+{
+	Alarm_Table[Alarm].Alarm_Handle = Handle;
+	Alarm_Table[Alarm].msPeriod = msPeriod /5;
+	Alarm_Table[Alarm].Count = 0;
+}
+
+void Alarm_Close(Alarm_t Alarm)
+{
+	Alarm_Table[Alarm].Alarm_Handle = NULL;
+}
+
+void Timer_msDelay(uint16_t msDelay)
+{
+	cli();			//인터럽트 정지
+	Delay_Count = msDelay / 5;		//이때 인터럽트 못하게 하라
+	sei();			//인터럽트 활성화
+	while(Delay_Count);
+}
+
+ISR(TIMER0_COMP_vect)
+{
+	uint8_t i;
+	for(i=0;i<ALARM_MAX;i++)
+	{
+		if(Alarm_Table[i].Alarm_Handle)
+		{
+			Alarm_Table[i].Count++;
+			if(Alarm_Table[i].Count == Alarm_Table[i].msPeriod)
+			{
+				Alarm_Table[i].Alarm_Handle();
+				Alarm_Table[i].Count = 0;
+			}
+		}
+	}
+	/*msDelay*/
+	Delay_Count--;
+}
+===========================Timer.h-===============================
+#ifndef _TIMER_H_
+#define _TIMER_H_
+
+
+typedef enum{
+	ALARM0,
+	ALARM1,
+	ALARM2,
+	ALARM3,
+	ALARM_MAX
+}Alarm_t;
+
+typedef void (*Alarm_Handle_t)(void);
+
+void Timer_Init(void);
+void Alarm_Open(Alarm_t Alarm,uint16_t msPeriod,Alarm_Handle_t Handle);
+void Alarm_Close(Alarm_t Alarm);
+void Timer_msDelay(uint16_t msDelay);
+
+#endif
+
+==================================uart.c============================
+#include "type.h"
+#include "atmega128.h"
+#include "uart.h"
+#include <avr/interrupt.h>
+
+
+static UART_Handle_t UART_Handle = NULL;
+
+void UART_Init(void)
+{
+	/* 레지스터 초기화 */
+	U2X1 = 0;		//0 :16 sampling  1: 8sampling
+	RXCIE1 = 1;		//Enable Interrupt
+	RXEN1 = 1;
+	TXEN1 = 1;
+	
+	UCSZ12 = 0;		//011 : Data 8 bit
+	UCSZ11 = 1;
+	UCSZ10 = 1;
+	
+	UPM11 = 0;		//00 : Parity None
+	UPM10 = 0;
+
+	USBS1 = 0;		//0 : Stopbit 1
+
+	UBRR1H = 0;		// 3 : 115200bps
+	UBRR1L = 3;
+}
+
+void UART_PutChar(uint8_t Data)
+{
+	/* UDR 비어있을 때 까지 기다림 */
+	while(UDRE1 == 0);
+	UDR1 = Data;
+}
+
+void UART_PutString(const char *String)
+{
+	while(*String)
+	{
+		UART_PutChar(*String);
+		String++;
+	}
+}
+
+void UART_Open(UART_Handle_t Handle)
+{
+	UART_Handle = Handle;
+}
+void UART_Close(void)
+{
+	UART_Handle = NULL;
+}
+
+
+ISR(USART1_RX_vect)
+{
+	if(UART_Handle)
+	{
+		UART_Handle(UDR1);
+	}
+
+}
+===============================uart.h===================================
+#ifndef _UART_H_
+#define _UART_H_
+
+#include "type.h"
+
+typedef void(*UART_Handle_t)(uint16_t Data);
+
+void UART_Init(void);
+void UART_PutChar(uint8_t Data);
+void UART_PutString(const char *String);
+void UART_Open(UART_Handle_t Handle);
+void UART_Close(void);
+
+
+
+
+
+#endif
+======================================================

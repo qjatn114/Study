@@ -1,0 +1,173 @@
+====================================================
+time.h
+
+#ifndef _TIMER_H_
+#define _TIMER_H_
+
+void Timer_Init(void);
+void Timer_Start(void);
+void Timer_Stop(void);
+void Timer_Reset(void);
+unsigned short Timer_GetTime(void);
+
+
+
+
+
+#endif
+======================================================
+time.c
+
+
+#include <avr/io.h>
+#include <avr/interrupt.h>
+
+
+unsigned short Time_100ms = 0;
+unsigned char Timer_Flag = 0;		//0 : stop, 1 : start
+
+
+void Timer_Init(void)
+{
+	/* Timer 초기화 (Timer1, 1/256, CTC Mode, 0.1초마다 인터럽트 */
+	TCCR1A = 0;
+	TCCR1B = 0x0c;
+	OCR1AH = 0x0b;
+	OCR1AL = 0x3f;				//2880-1 = 0x0x0b3f : 0.1s
+	TIMSK |= (1 << OCIE1A);		//Enable interrupt
+}
+
+void Timer_Start(void)
+{
+	Timer_Flag = 1;
+}
+void Timer_Stop(void)
+{
+	Timer_Flag = 0;
+}
+void Timer_Reset(void)
+{
+	Timer_Flag = 0;
+	Time_100ms = 0;
+}
+unsigned short Timer_GetTime(void)
+{
+	return Time_100ms;
+}
+/* 0.1s 마다 호출 */
+ISR(TIMER1_COMPA_vect)
+{
+	if(Timer_Flag)
+	{
+		Time_100ms++;
+	}
+}
+
+======================================================
+main.c
+
+#include <avr/io.h>
+#include <avr/interrupt.h>
+
+#include "led.h"
+#include "buzzer.h"
+#include "fnd.h"
+#include "key.h"
+#include "delay.h"
+#include "uart.h"
+#include "timer.h"
+
+void UART_Control(void);
+void StopWatch_Display(void);
+const unsigned char LED_Pattern[8] = {0x00,0x81,0x42,0x24,0x18,0x55,0xaa,0xff};
+
+int main(void)
+{
+	unsigned char Key_Push,i;
+
+	LED_Init();
+	Buzzer_Init();
+	Key_Init();
+	FND_Init();
+	UART_Init();
+	Timer_Init();
+
+	Buzzer_On(1);
+	Delay(10000);
+	Buzzer_On(0);
+	
+	UART_PutChar('A');
+	UART_PutChar('B');
+	UART_PutChar('C');
+	UART_PutChar('D');
+	UART_PutString("\r\n==========================\r\n");
+	UART_PutString("==ATmega128 Test Program==\r\n");	
+	UART_PutString("==========================\r\n");
+	
+	/* 외부인터럽트 초기화 */
+	EICRB = (EICRB & ~0x03) | 0x02;	//Falling Edge
+	EIMSK |= (1 << INT4);		
+
+	sei();		//Enable Global Interrupt
+
+	
+	while(1)
+	{
+		UART_Control();
+		StopWatch_Display();
+	}
+}
+
+void UART_Control(void)
+{
+	unsigned char Data;
+	/* UART 데이터 받아옴 */
+	if(UART_GetChar(&Data) == 0)
+		return;
+
+	switch(Data)
+	{
+		case 0:					// stop
+			Timer_Stop();
+			break;
+		case 1:					// start
+			Timer_Start();
+			break;
+		case 2:					// reset
+			Timer_Reset();
+			break;
+		default :
+			break;
+	}
+	
+	/* FND 표시 */	
+/*
+	FND_Write(Data%10,0,0);
+	FND_Write(Data/10 %10,1,0);
+	FND_Write(Data/100 %10,2,0);
+	FND_Write(Data/1000 %10,3,0);
+*/
+}
+
+void StopWatch_Display(void)
+{
+	unsigned short Time;
+
+	Time = Timer_GetTime();
+
+		/* FND 표시 */
+	FND_Write(Time%10,0,0);				//0.1초의 자리
+	FND_Write(Time/10 %10,1,1);			//1초의 자리
+	FND_Write(Time/100 %6,2,0);			//10초의 자리
+	FND_Write(Time/600 %10,3,1);		//1분의 자리
+
+}
+
+ISR(INT4_vect)
+{
+	static unsigned char KeyCount = 0;
+	KeyCount++;
+	FND_On(KeyCount % 10,0,0);
+}
+
+=======================================================
